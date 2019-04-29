@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+ 
+      <link rel="stylesheet" href="css/style.css">
+
+
+  
+</head>
+
+<body>
+  <div class="container">
+  <div class="login">
+    
+  	<h1 class="login-heading">
+      <strong>Bienvenidos.</strong></h1>
+      
+      <form method="POST" action="login.php">
+        <input type="text" name="nick" id="nick" placeholder="nick Name" class="input-txt" required/>
+          <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" class="input-txt" required />
+          <div class="login-footer">
+            <button type="submit" class="btn btn--right">Ingresa</button>
+            
+            <a type="submit" href="php/registro/menu_registro.php">Registrarse</a>
+    
+          </div>
+        
+      </form>
+
+  </div>
+</div>
+</body>
+</html>
