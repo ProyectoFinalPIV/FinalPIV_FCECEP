@@ -157,7 +157,7 @@ function farmacia(){
        $("#titulo").html("Editar Farmacia");
        //Recupera datos del fromulario
        var codigo = $(this).data("codigo");
-       var farmacia;
+       var ciudad;
         $("#nuevo-editar").load("./php/farmacia/editar_farmacia.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
@@ -212,13 +212,13 @@ $(document).ready(() => {
   $("#contenido").off("click","button#grabar");
   $("#titulo").html("Listado de Farmacias");
   dt = $("#tabla").DataTable({
-        "ajax": "php/ciudad/controlador_farmacia.php?accion=listar",
+        "ajax": "php/farmacia/controlador_farmacia.php?accion=listar",
         "columns": [
-            { "data": "farmacia_codi"} ,
-            { "data": "farmacia_nomb" },
+            { "data": "farma_codi"} ,
+            { "data": "farma_nomb" },
             { "data": "farma_dir" },
-            { "data": "ciudad_id",
-            { "data": "farma_tel" },
+            { "data": "farma_tel"},
+            { "data": "ciudad_id" ,
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash glyphicon glyphicon-trash "></i></a>' 
                 }

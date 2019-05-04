@@ -20,8 +20,7 @@
             <div class="panel-body">
     
                 <form class="form-horizontal" role="form"  id="ffarmacia">
-
-
+                 <fieldset> <!-- Enmarca el formulario -->
  					<div class="form-group">
                         <label class="control-label col-sm-2" for="farma_codi">Código:</label>
                         <div class="col-sm-10">
@@ -38,9 +37,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="farma_nomb">Dirección:</label>
+                        <label class="control-label col-sm-2" for="farma_dir">Dirección:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="farma_nomb" name="farma_nomb" placeholder="Ingrese Dirección Farmacia"
+                            <input type="text" class="form-control" id="farma_dir" name="farma_dir" placeholder="Ingrese Dirección Farmacia"
                             value = "">
                         </div>
                     </div>
@@ -56,7 +55,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-2" for="farma_tel">Teléfono:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="farma_tel" name="farma_tel" placeholder="Ingrese Dirección Farmacia"
+                            <input type="text" class="form-control" id="farma_tel" name="farma_tel" placeholder="Ingrese teléfono Farmacia"
                             value = "">
                         </div>
                     </div>
