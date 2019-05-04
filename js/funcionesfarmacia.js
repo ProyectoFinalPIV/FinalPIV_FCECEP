@@ -222,6 +222,7 @@ $(document).ready(() => {
             { "data": "farma_codi"} ,
             { "data": "farma_nomb" },
             { "data": "farma_dir" },
+            { "data": "ciudad_nom"},
             { "data": "farma_tel"},
             { "data": "ciudad_id" ,
                 render: function (data) {
