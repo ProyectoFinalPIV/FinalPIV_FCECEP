@@ -44,17 +44,17 @@ switch ($_GET['accion']){
         $farmacia = new Farmacia();
         $farmacia->consultar($datos['codigo']);
 
-        if($farmacia->getFarmacia_codi() == null) {
+        if($farmacia->getFarma_codi() == null) {
             $respuesta = array(
                 'respuesta' => 'no existe'
             );
         }  else {
             $respuesta = array(
-                'codigo' => $farmacia->getFarmacia_codi(),
-                'farmacia' => $farmacia->getfarmacia_nomb(),
-                'direccion' => $farmacia->getfarmacia_dir(),
+                'codigo' => $farmacia->getFarma_codi(),
+                'farmacia' => $farmacia->getfarma_nomb(),
+                'direccion' => $farmacia->getfarma_dir(),
                 'ciudad' =>$farmacia->getCiudad_id(),
-                'telefono' => $farmacia->getfarmacia_tel(),
+                'telefono' => $farmacia->getfarma_tel(),
                 'respuesta' =>'existe'
             );
         }

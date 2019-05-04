@@ -1,6 +1,6 @@
    <div id="seccion-farmacia">
     <div class="box-header">
-    	<i class="fa fa-building" aria-hidden="true">Gestion de Farmacia</i>
+    	<i class="fa fa-building" aria-hidden="true">&nbspGestion de Farmacia</i>
         
         <!-- tools box -->
         <div class="pull-right box-tools">

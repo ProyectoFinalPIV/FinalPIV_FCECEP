@@ -1,5 +1,5 @@
 <div id="nuevo-editar" class="hide">
-		<!-- div para cargar el formulario para una nueva comuna o editar una comuna -->
+		<!-- div para cargar el formulario para una nueva ciudad o editar una comuna -->
 </div>
 
 <div id="ciudad">

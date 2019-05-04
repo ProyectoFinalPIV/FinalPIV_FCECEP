@@ -13,7 +13,7 @@ function farmacia(){
                 swal(
                     'Actualizado!',
                     'Se actualizaron los datos correctamente',
-                    'Muy Bién'
+                    'success' //Palabra no modificar(Sale Chulo verde animacion) //Palabra no modificar(Sale Chulo verde animacion)
                 )     
                 dt.ajax.reload();
                 $("#titulo").html("Listado Farmacias");
@@ -40,10 +40,14 @@ function farmacia(){
               title: '¿Está seguro?',
               text: "¿Realmente desea borrar la farmacia con codigo : " + codigo + " ?",
               type: 'warning',
+              //icon: 'warning', //unpkg.com/sweetalert/
               showCancelButton: true,
+              //buttons: true,    //unpkg.com/sweetalert/
               confirmButtonColor: '#3085d6',
+              //dangerMode: true,   //unpkg.com/sweetalert/
               cancelButtonColor: '#d33',
               confirmButtonText: 'Si, Borrarlo!'
+              //buttons:'Si, Borrarlo'  //unpkg.com/sweetalert/
         }).then((decision) => {
                 if (decision.value) {
 
@@ -59,7 +63,7 @@ function farmacia(){
                             swal(
                                 'Borrado!',
                                 'La farmacia con codigo : ' + codigo + ' fue borrada',
-                                'success'
+                                'success' //Palabra no modificar(Sale Chulo verde animacion)
                             )     
                             dt.ajax.reload();                            
                         } else {
@@ -133,7 +137,7 @@ function farmacia(){
                 swal(
                     'Grabado!!',
                     'El registro se grabó correctamente',
-                    'success'
+                    'success' //Palabra no modificar(Sale Chulo verde animacion)
                 )     
                 dt.ajax.reload();
                 $("#titulo").html("Listado Farmacias");
@@ -176,11 +180,12 @@ function farmacia(){
                       text: 'Farmacia no existe!!!!!'                         
                     })
                 } else {
-                    $("#farma_codi").val(farmacia.codigo);                   
-                    $("#farma_nomb").val(farmacia.farmacia);
-                    $("#farma_dir").val(farmacia.farmacia);
-                    ciudad = farmacia.ciudad;
-                    $("#farma_tel").val(farmacia.farmacia);
+                    $("#farma_codi").val(farmacia.codigo);   //Controlador_famacia linea 53                
+                    $("#farma_nomb").val(farmacia.farmacia); //Controlador_famacia linea 54
+                    $("#farma_dir").val(farmacia.direccion); //Controlador_famacia linea 55
+                    ciudad = farmacia.ciudad;                //Controlador_famacia linea 56
+                    $("#farma_tel").val(farmacia.telefono);  //Controlador_famacia linea 57
+                    
                 }
            });
 

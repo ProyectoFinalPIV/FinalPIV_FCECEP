@@ -13,7 +13,7 @@ function pais(){
                 swal(
                     'Actualizado!',
                     'Se actualizaron los datos correctamente',
-                    'Muy Bién'
+                    'success' //Palabra no modificar(Sale Chulo verde animacion)
                 )     
                 dt.ajax.reload();
                 $("#titulo").html("Listado Paises");
@@ -40,10 +40,14 @@ function pais(){
               title: '¿Está seguro?',
               text: "¿Realmente desea borrar el pais con codigo : " + codigo + " ?",
               type: 'warning',
+              //icon: 'warning', //unpkg.com/sweetalert/
               showCancelButton: true,
+              //buttons: true,   //unpkg.com/sweetalert/
               confirmButtonColor: '#3085d6',
+              //dangerMode: true, //unpkg.com/sweetalert/
               cancelButtonColor: '#d33',
               confirmButtonText: 'Si, Borrarlo!'
+              //buttons:'Si, Borrarlo'  //unpkg.com/sweetalert/             
         }).then((decision) => {
                 if (decision.value) {
 
@@ -59,7 +63,7 @@ function pais(){
                             swal(
                                 'Borrado!',
                                 'El pais con codigo : ' + codigo + ' fue borrado',
-                                'Muy Bién'
+                                'success' //Palabra no modificar(Sale Chulo verde animacion)
                             )     
                             dt.ajax.reload();                            
                         } else {
@@ -134,7 +138,7 @@ function pais(){
                 swal(
                     'Grabado!!',
                     'El registro se grabó correctamente',
-                    'Muy Bién'
+                    'success' //Palabra no modificar(Sale Chulo verde animacion)
                 )     
                 dt.ajax.reload();
                 $("#titulo").html("Listado Paises");
