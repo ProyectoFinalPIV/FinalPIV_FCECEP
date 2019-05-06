@@ -50,18 +50,18 @@ switch ($_GET['accion']){
             );
         }  else {
             $respuesta = array(
-            'cliente_codi' => $cliente->getCliente_codi(),
-            'cliente_cedulaº' => $cliente->getCliente_cedula(),
-            'docu_codi' => $cliente->getDocu_codi(),
-            'gene_codi' => $cliente->getGene_codi(),
-            'cliente_nomb' => $cliente->getCliente_nomb(),
-            'cliente_apel' => $cliente->getClilente_apel(),
-            'cliente_apel2' => $cliente->getClilente_apel2(),
-            'cliente_fec_nac' => $cliente->getCliente_fec_nac(),
-            'cliente_tel' => $cliente->getCliente_tel(),
-            'cliente_cel' => $cliente->getCliente_cel(),
-            'cliente_dir' => $cliente->getCliente_dir(),
-            'ciudad_id' =>$cliente->getCiudad_id(),
+            'codigo' => $cliente->getCliente_codi(),
+            'cedula' => $cliente->getCliente_cedula(),
+            'documento' => $cliente->getDocu_codi(),
+            'genero' => $cliente->getGene_codi(),
+            'nombre' => $cliente->getCliente_nomb(),
+            'p_apellido' => $cliente->getCliente_apel(),
+            's_apellido' => $cliente->getCliente_apel2(),
+            'f_naci' => $cliente->getCliente_fec_nac(),
+            'telefono' => $cliente->getCliente_tel(),
+            'celular' => $cliente->getCliente_cel(),
+            'direccion' => $cliente->getCliente_dir(),
+            'ciudad' =>$cliente->getCiudad_id(),
             'respuesta' =>'existe'
             );
         }
@@ -73,5 +73,5 @@ switch ($_GET['accion']){
         $listado = $cliente->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
-}
+} //Codigo Listo - falta validar
 ?>

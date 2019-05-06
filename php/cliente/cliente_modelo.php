@@ -69,7 +69,7 @@
 		public function consultar($cliente_codi='') {
 			if($cliente_codi !=''):
 				$this->query = "
-				SELECT cliente_codi, cliente_cedula, docu_codi, gene_codi, cliente_nomb, cliente_apel, cliente_apel2, cliente_tel, cliente_cel, cliente_dir, ciudad_id
+				SELECT cliente_codi, cliente_cedula, docu_codi, gene_codi, cliente_nomb, cliente_apel, cliente_apel2, cliente_fec_nac, cliente_tel, cliente_cel, cliente_dir, ciudad_id
 				FROM tb_cliente
 				WHERE cliente_codi = '$cliente_codi' order by cliente_codi
 				";
@@ -84,11 +84,11 @@
 		
 		public function lista() {
 			$this->query = "
-			SELECT cliente_codi, cliente_cedula, docu.docu_nomb, gene.gene_nomb, cliente_nomb, cliente_apel, cliente_apel2, cliente_tel, cliente_cel, cliente_dir, ciudad.ciudad_nom
-			FROM tb_cliente as cliente inner join tb_ciudad as ciudad
-			ON (cliente.ciudad_id = ciudad.ciudad_id) inner join tb_tipo_documento as docu
+			SELECT cliente_codi, cliente_cedula, docu.docu_nomb, gene.gene_nomb,cliente_nomb, cliente_apel, cliente_apel2, cliente_fec_nac, cliente_tel, cliente_cel, cliente_dir, ciudad.ciudad_nom
+			FROM tb_cliente as cliente INNER JOIN tb_tipo_documento as docu
 			ON (cliente.docu_codi = docu.docu_codi) inner join tb_genero as gene
-			ON (cliente.gene_codi = gene.gene_codi) order by cliente_codi";
+			ON (cliente.gene_codi = gene.gene_codi) INNER JOIN  tb_ciudad as ciudad
+			ON (cliente.ciudad_id = ciudad.ciudad_id)order by cliente_codi";
 			
 			$this->obtener_resultados_query();
 			return $this->rows;
@@ -104,7 +104,7 @@
 				$cliente_nomb= utf8_decode($cliente_nomb);
 				$cliente_apel= utf8_decode($cliente_apel);
 				$cliente_apel2= utf8_decode($cliente_apel2);
-				$cliente_fec_nac = ($cliente_fec_nac)
+				$cliente_fec_nac = ($cliente_fec_nac);
 				$cliente_tel= ($cliente_tel);
 				$cliente_cel= ($cliente_cel);
 				$cliente_dir= ($cliente_dir);
@@ -124,8 +124,8 @@
 				$$campo = $valor;
 			endforeach;
 			$cliente_cedula= ($cliente_cedula);
-			$docu_nomb= utf8_decode($docu_nomb);
-				$gene_nomb= utf8_decode($gene_nomb);
+			/*$docu_nomb= utf8_decode($docu_nomb);
+				$gene_nomb= utf8_decode($gene_nomb);*/
 				$cliente_nomb= utf8_decode($cliente_nomb);
 				$cliente_apel= utf8_decode($cliente_apel);
 				$cliente_apel2= utf8_decode($cliente_apel2);
@@ -165,5 +165,5 @@
 		function __destruct() {
 			//unset($this);
 		}
-	}
-?>
+	} //Codigo Listo - falta validar
+?> 
