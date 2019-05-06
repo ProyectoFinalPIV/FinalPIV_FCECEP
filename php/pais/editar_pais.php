@@ -61,4 +61,4 @@
 		</form>
 	</div>
     <input type="hidden" id="pagina" value="editar" name="editar"/>
-</div>
+</div> <!-- codigo listo, funcionando -->

@@ -1,5 +1,5 @@
 <div id="nuevo-editar" class="hide">
-		<!-- div para cargar el formulario para una nueva ciudad o editar una comuna -->
+		<!-- div para cargar el formulario para un nuevo cliente o editar un cliente -->
 </div>
 
 <div id="cliente">
@@ -43,4 +43,4 @@
 
 </div><!-- /.box-body -->  
 <script src="js/funcionesCliente.js"></script>
-</div>
+</div> <!-- codigo listo, funcionando -->

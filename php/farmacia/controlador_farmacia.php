@@ -51,10 +51,10 @@ switch ($_GET['accion']){
         }  else {
             $respuesta = array(
                 'codigo' => $farmacia->getFarma_codi(),
-                'farmacia' => $farmacia->getfarma_nomb(),
-                'direccion' => $farmacia->getfarma_dir(),
+                'farmacia' => $farmacia->getFarma_nomb(),
+                'direccion' => $farmacia->getFarma_dir(),
                 'ciudad' =>$farmacia->getCiudad_id(),
-                'telefono' => $farmacia->getfarma_tel(),
+                'telefono' => $farmacia->getFarma_tel(),
                 'respuesta' =>'existe'
             );
         }
@@ -66,5 +66,5 @@ switch ($_GET['accion']){
         $listado = $farmacia->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
-}
+}      //<!-- codigo listo, funcionando -->
 ?>

@@ -63,5 +63,5 @@ switch ($_GET['accion']){
         $listado = $pais->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
-}
+}  //<!-- codigo listo, funcionando -->
 ?>

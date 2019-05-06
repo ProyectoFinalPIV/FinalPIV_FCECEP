@@ -130,4 +130,4 @@
 		</form>
 	</div>
     <input type="hidden" id="pagina" value="editar" name="editar"/>
-</div> <!-- codigo listo, falta validar -->
+</div> <!-- codigo listo, funcionando -->

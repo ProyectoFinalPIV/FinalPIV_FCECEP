@@ -34,4 +34,4 @@
 
 </div><!-- /.box-body -->  
 <script src="js/funcionesCiudad.js"></script>
-</div>
+</div> <!-- codigo listo, funcionando -->

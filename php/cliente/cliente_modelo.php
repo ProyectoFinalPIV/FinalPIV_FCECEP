@@ -165,5 +165,5 @@
 		function __destruct() {
 			//unset($this);
 		}
-	} //Codigo Listo - falta validar
+	} //Codigo Listo - funcionando
 ?> 

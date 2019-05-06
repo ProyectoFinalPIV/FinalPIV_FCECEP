@@ -33,4 +33,4 @@
 
 </div><!-- /.box-body -->  
 <script src="js/funcionesGenero.js"></script>
-</div>
+</div> <!-- codigo listo, funcionando -->

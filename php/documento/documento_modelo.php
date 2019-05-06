@@ -87,5 +87,5 @@
 		function __destruct() {
 			//unset($this);
 		}
-	}    // codigo listo, falta validar
+	}    // codigo listo, funcionando
 ?>

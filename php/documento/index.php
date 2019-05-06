@@ -33,4 +33,4 @@
 
 </div><!-- /.box-body -->  
 <script src="js/funcionesDocumento.js"></script>
-</div>
+</div> <!-- Código listo - funcionando -->

@@ -73,5 +73,5 @@ switch ($_GET['accion']){
         $listado = $cliente->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
-} //Codigo Listo - falta validar
+} //Codigo Listo - funcionando
 ?>

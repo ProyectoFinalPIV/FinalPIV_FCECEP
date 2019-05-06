@@ -63,5 +63,5 @@ switch ($_GET['accion']){
         $listado = $genero->lista();
         echo json_encode(array('data'=>$listado), JSON_UNESCAPED_UNICODE);    
         break;
-}  //Codigo listo - falta validar
+}  //Codigo listo - funcionando
 ?>

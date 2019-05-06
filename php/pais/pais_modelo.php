@@ -88,5 +88,5 @@
 		function __destruct() {
 			//unset($this);
 		}
-	}
+	} //<!-- codigo listo, funcionando -->
 ?>

@@ -36,4 +36,4 @@
 
 </div><!-- /.box-body -->  
 <script src="js/funcionesFarmacia.js"></script>
-</div>
+</div>  <!-- codigo listo, funcionando -->

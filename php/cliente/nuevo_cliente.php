@@ -129,4 +129,4 @@
 
 		</form>
 	</div>
-</div> <!-- codigo listo, falta validar -->
+</div> <!-- codigo listo, funcionando -->
