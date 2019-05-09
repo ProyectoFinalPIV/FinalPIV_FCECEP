@@ -5,7 +5,7 @@ function cliente(){
          var datos=$("#fcliente").serialize();
          $.ajax({
             type:"get",
-            url:"./php/cliente/controlador_cliente.php",
+            url:"php/cliente/controlador_cliente.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -53,7 +53,7 @@ function cliente(){
 
                     var request = $.ajax({
                         method: "get",
-                        url: "./php/cliente/controlador_cliente.php",
+                        url: "php/cliente/controlador_cliente.php",
                         data: {codigo: codigo, accion:'borrar'},
                         dataType: "json"
                     })
@@ -105,14 +105,43 @@ function cliente(){
        //Pendiente por Validar
     $("#contenido").on("click","button#nuevo",function(){
         $("#titulo").html("Nuevo Cliente");
-        $("#nuevo-editar" ).load("./php/cliente/nuevo_cliente.php"); 
+        $("#nuevo-editar" ).load("php/cliente/nuevo_cliente.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#cliente").removeClass("show");
         $("#cliente").addClass("hide");
+           //Cargar Listado Documento
+        $.ajax({
+             type:"get",
+             url:"php/documento/controlador_documento.php",
+             data: {accion:'listar'},
+             dataType:"json"
+           }).done(function( resultado ) {   
+              //console.log(resultado.data)           
+              $("#docu_codi option").remove()       
+              $("#docu_codi").append("<option selecte value=''>Seleccione un tipo de Documento</option>")
+              $.each(resultado.data, function (index, value) { 
+                $("#docu_codi").append("<option value='" + value.docu_codi + "'>" + value.docu_nomb + "</option>")
+              });
+           });
+            //Cargar Listado Genero
          $.ajax({
              type:"get",
-             url:"./php/ciudad/controlador_ciudad.php",
+             url:"php/genero/controlador_genero.php",
+             data: {accion:'listar'},
+             dataType:"json"
+           }).done(function( resultado ) {   
+              //console.log(resultado.data)           
+              $("#gene_codi option").remove()       
+              $("#gene_codi").append("<option selecte value=''>Seleccione un Genero</option>")
+              $.each(resultado.data, function (index, value) { 
+                $("#gene_codi").append("<option value='" + value.gene_codi + "'>" + value.gene_nomb + "</option>")
+              });
+           });
+             //Cargar Listado Documento
+         $.ajax({
+             type:"get",
+             url:"php/ciudad/controlador_ciudad.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -129,7 +158,7 @@ function cliente(){
      var datos=$("#fcliente").serialize();
        $.ajax({
             type:"get",
-            url:"./php/cliente/controlador_cliente.php",
+            url:"php/cliente/controlador_cliente.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -164,14 +193,14 @@ function cliente(){
        var documento;
        var genero;
        var ciudad;
-        $("#nuevo-editar").load("./php/cliente/editar_cliente.php");
+        $("#nuevo-editar").load("php/cliente/editar_cliente.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#cliente").removeClass("show");
         $("#cliente").addClass("hide");
        $.ajax({
            type:"get",
-           url:"./php/cliente/controlador_cliente.php",
+           url:"php/cliente/controlador_cliente.php",
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
            }).done(function( cliente ) {        
@@ -198,10 +227,29 @@ function cliente(){
                     ciudad = cliente.ciudad;
                 }
            });
+
+            //Cargar Listado Documento
+           $.ajax({
+             type:"get",
+             url:"php/documento/controlador_documento.php",
+             data: {accion:'listar'},
+             dataType:"json"
+           }).done(function( resultado ) {                     
+              $("#docu_codi option").remove();
+              $.each(resultado.data, function (index, value) { 
+                
+                if(ciudad === value.docu_codi){
+                  $("#docu_codi").append("<option selected value='" + value.docu_codi + "'>" + value.docu_nomb + "</option>")
+                }else {
+                  $("#docu_codi").append("<option value='" + value.docu_codi + "'>" + value.docu_nomb + "</option>")
+                }
+              });
+           }); 
+
                //Cargar Listado Generos
            $.ajax({
              type:"get",
-             url:"./php/genero/controlador_genero.php",
+             url:"php/genero/controlador_genero.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
@@ -218,7 +266,7 @@ function cliente(){
                //Cargar Listado ciudades
            $.ajax({
              type:"get",
-             url:"./php/ciudad/controlador_ciudad.php",
+             url:"php/ciudad/controlador_ciudad.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
