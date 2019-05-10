@@ -5,7 +5,7 @@ function ciudad(){
          var datos=$("#fciudad").serialize();
          $.ajax({
             type:"get",
-            url:"./php/ciudad/controlador_ciudad.php",
+            url:"../../php/ciudad/controlador_ciudad.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -53,7 +53,7 @@ function ciudad(){
 
                     var request = $.ajax({
                         method: "get",
-                        url: "./php/ciudad/controlador_ciudad.php",
+                        url: "../../php/ciudad/controlador_ciudad.php",
                         data: {codigo: codigo, accion:'borrar'},
                         dataType: "json"
                     })
@@ -105,14 +105,14 @@ function ciudad(){
 
     $("#contenido").on("click","button#nuevo",function(){
         $("#titulo").html("Nueva Ciudad");
-        $("#nuevo-editar" ).load("./php/ciudad/nuevo_ciudad.php"); 
+        $("#nuevo-editar" ).load("../../php/ciudad/nuevo_ciudad.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#ciudad").removeClass("show");
         $("#ciudad").addClass("hide");
          $.ajax({
              type:"get",
-             url:"./php/pais/controlador_pais.php",
+             url:"../../php/pais/controlador_pais.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -129,7 +129,7 @@ function ciudad(){
      var datos=$("#fciudad").serialize();
        $.ajax({
             type:"get",
-            url:"./php/ciudad/controlador_ciudad.php",
+            url:"../../php/ciudad/controlador_ciudad.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -162,14 +162,14 @@ function ciudad(){
        //Recupera datos del fromulario
        var codigo = $(this).data("codigo");
        var pais;
-        $("#nuevo-editar").load("./php/ciudad/editar_ciudad.php");
+        $("#nuevo-editar").load("../../php/ciudad/editar_ciudad.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#ciudad").removeClass("show");
         $("#ciudad").addClass("hide");
        $.ajax({
            type:"get",
-           url:"./php/ciudad/controlador_ciudad.php",
+           url:"../../php/ciudad/controlador_ciudad.php",
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
            }).done(function( ciudad ) {        
@@ -188,7 +188,7 @@ function ciudad(){
 
            $.ajax({
              type:"get",
-             url:"./php/pais/controlador_pais.php",
+             url:"../../php/pais/controlador_pais.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
@@ -214,7 +214,7 @@ $(document).ready(() => {
   $("#contenido").off("click","button#grabar");
   $("#titulo").html("Listado de Ciudades");
   dt = $("#tabla").DataTable({
-        "ajax": "php/ciudad/controlador_ciudad.php?accion=listar",
+        "ajax": "../../php/ciudad/controlador_ciudad.php?accion=listar",
         "columns": [
             { "data": "ciudad_id"} ,
             { "data": "ciudad_nom" },

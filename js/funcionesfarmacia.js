@@ -5,7 +5,7 @@ function farmacia(){
          var datos=$("#ffarmacia").serialize();
          $.ajax({
             type:"get",
-            url:"./php/farmacia/controlador_farmacia.php",
+            url:"../../php/farmacia/controlador_farmacia.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -53,7 +53,7 @@ function farmacia(){
 
                     var request = $.ajax({
                         method: "get",
-                        url: "./php/farmacia/controlador_farmacia.php",
+                        url: "../../php/farmacia/controlador_farmacia.php",
                         data: {codigo: codigo, accion:'borrar'},
                         dataType: "json"
                     })
@@ -105,14 +105,14 @@ function farmacia(){
 
     $("#contenido").on("click","button#nuevo",function(){
         $("#titulo").html("Nueva farmacia");
-        $("#nuevo-editar" ).load("./php/farmacia/nuevo_farmacia.php"); 
+        $("#nuevo-editar" ).load("../../php/farmacia/nuevo_farmacia.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#farmacia").removeClass("show");
         $("#farmacia").addClass("hide");
          $.ajax({
              type:"get",
-             url:"./php/ciudad/controlador_ciudad.php",
+             url:"../../php/ciudad/controlador_ciudad.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -129,7 +129,7 @@ function farmacia(){
      var datos=$("#ffarmacia").serialize();
        $.ajax({
             type:"get",
-            url:"./php/farmacia/controlador_farmacia.php",
+            url:"../../php/farmacia/controlador_farmacia.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -162,14 +162,14 @@ function farmacia(){
        //Recupera datos del fromulario
        var codigo = $(this).data("codigo");
        var ciudad;
-        $("#nuevo-editar").load("./php/farmacia/editar_farmacia.php");
+        $("#nuevo-editar").load("../../php/farmacia/editar_farmacia.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#farmacia").removeClass("show");
         $("#farmacia").addClass("hide");
        $.ajax({
            type:"get",
-           url:"./php/farmacia/controlador_farmacia.php",
+           url:"../../php/farmacia/controlador_farmacia.php",
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
            }).done(function( farmacia ) {        
@@ -191,7 +191,7 @@ function farmacia(){
 
            $.ajax({
              type:"get",
-             url:"./php/ciudad/controlador_ciudad.php",
+             url:"../../php/ciudad/controlador_ciudad.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
@@ -217,14 +217,15 @@ $(document).ready(() => {
   $("#contenido").off("click","button#grabar");
   $("#titulo").html("Listado de Farmacias");
   dt = $("#tabla").DataTable({
-        "ajax": "php/farmacia/controlador_farmacia.php?accion=listar",
+        "ajax": "../../php/farmacia/controlador_farmacia.php?accion=listar",
         "columns": [
             { "data": "farma_codi"} ,
             { "data": "farma_nomb" },
             { "data": "farma_dir" },
             { "data": "ciudad_nom"},
             { "data": "farma_tel"},
-            { "data": "ciudad_id" ,
+            /*{ "data": "ciudad_id" ,*/ //en caso que no sea farma_codi
+            { "data": "farma_codi" ,
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash glyphicon glyphicon-trash "></i></a>' 
                 }

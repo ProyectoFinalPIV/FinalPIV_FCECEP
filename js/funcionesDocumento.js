@@ -5,7 +5,7 @@ function documento(){
          var datos=$("#fdocumento").serialize();
          $.ajax({
             type:"get",
-            url:"./php/documento/controlador_documento.php",
+            url:"../../php/documento/controlador_documento.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -13,7 +13,7 @@ function documento(){
                 swal({
                     title: 'Sweet!',
                     text: 'El registro se grabó correctamente',
-                    imageUrl: "img/thumbs-up.jpg" //Palabra no modificar(Sale Chulo animacion)
+                    imageUrl: "../../img/thumbs-up.jpg" //Palabra no modificar(Sale Chulo animacion)
                 })
                 /*swal(
                     'Actualizado!',
@@ -58,7 +58,7 @@ function documento(){
 
                     var request = $.ajax({
                         method: "get",
-                        url: "./php/documento/controlador_documento.php",
+                        url: "../../php/documento/controlador_documento.php",
                         data: {codigo: codigo, accion:'borrar'},
                         dataType: "json"
                     })
@@ -110,14 +110,14 @@ function documento(){
 
     $("#contenido").on("click","button#nuevo",function(){
         $("#titulo").html("Nuevo Documento");
-        $("#nuevo-editar" ).load("./php/documento/nuevo_documento.php"); 
+        $("#nuevo-editar" ).load("../../php/documento/nuevo_documento.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#documento").removeClass("show");
         $("#documento").addClass("hide");
          /*$.ajax({
              type:"get",
-             url:"./php/pais/controlador_pais.php",
+             url:"../../php/pais/controlador_pais.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -134,7 +134,7 @@ function documento(){
      var datos=$("#fdocumento").serialize();
        $.ajax({
             type:"get",
-            url:"./php/documento/controlador_documento.php",
+            url:"../../php/documento/controlador_documento.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -146,8 +146,8 @@ function documento(){
                 )*/
                 swal({
                     title: 'Sweet!',
-                    text: 'El registro se grabó correctamente',
-                    imageUrl: "img/thumbs-up.jpg" //Palabra no modificar(Sale Chulo animacion)
+                    text: 'El registro  se se se grabó correctamente',
+                    imageUrl: "../../img/thumbs-up.jpg" //Palabra no modificar(Sale Chulo animacion)
                 })     
                 dt.ajax.reload();
                 $("#titulo").html("Listado Documentos");
@@ -171,14 +171,14 @@ function documento(){
        $("#titulo").html("Editar Documento");
        //Recupera datos del fromulario
        var codigo = $(this).data("codigo");
-        $("#nuevo-editar").load("./php/documento/editar_documento.php");
+        $("#nuevo-editar").load("../../php/documento/editar_documento.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#documento").removeClass("show");
         $("#documento").addClass("hide");
        $.ajax({
            type:"get",
-           url:"./php/documento/controlador_documento.php",
+           url:"../../php/documento/controlador_documento.php",
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
            }).done(function( documento ) {        
@@ -204,7 +204,7 @@ $(document).ready(() => {
   $("#contenido").off("click","button#grabar");
   $("#titulo").html("Listado de Documentos");
   dt = $("#tabla").DataTable({
-        "ajax": "php/documento/controlador_documento.php?accion=listar",
+        "ajax": "../../php/documento/controlador_documento.php?accion=listar",
         "columns": [
             { "data": "docu_codi"} ,
             { "data": "docu_nomb" },

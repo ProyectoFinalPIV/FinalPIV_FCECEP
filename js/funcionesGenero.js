@@ -5,7 +5,7 @@ function genero(){
          var datos=$("#fgenero").serialize();
          $.ajax({
             type:"get",
-            url:"./php/genero/controlador_genero.php",
+            url:"../../php/genero/controlador_genero.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -53,7 +53,7 @@ function genero(){
 
                     var request = $.ajax({
                         method: "get",
-                        url: "./php/genero/controlador_genero.php",
+                        url: "../../php/genero/controlador_genero.php",
                         data: {codigo: codigo, accion:'borrar'},
                         dataType: "json"
                     })
@@ -105,7 +105,7 @@ function genero(){
 
     $("#contenido").on("click","button#nuevo",function(){
         $("#titulo").html("Nuevo Genero");
-        $("#nuevo-editar" ).load("./php/genero/nuevo_genero.php"); 
+        $("#nuevo-editar" ).load("../../php/genero/nuevo_genero.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#genero").removeClass("show");
@@ -129,7 +129,7 @@ function genero(){
      var datos=$("#fgenero").serialize();
        $.ajax({
             type:"get",
-            url:"./php/genero/controlador_genero.php",
+            url:"../../php/genero/controlador_genero.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -162,14 +162,14 @@ function genero(){
        //Recupera datos del fromulario
        var codigo = $(this).data("codigo");
        /*var pais;*/
-        $("#nuevo-editar").load("./php/genero/editar_genero.php");
+        $("#nuevo-editar").load("../../php/genero/editar_genero.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#genero").removeClass("show");
         $("#genero").addClass("hide");
        $.ajax({
            type:"get",
-           url:"./php/genero/controlador_genero.php",
+           url:"../../php/genero/controlador_genero.php",
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
            }).done(function( genero ) {        
@@ -214,7 +214,7 @@ $(document).ready(() => {
   $("#contenido").off("click","button#grabar");
   $("#titulo").html("Listado de Genero");
   dt = $("#tabla").DataTable({
-        "ajax": "php/genero/controlador_genero.php?accion=listar",
+        "ajax": "../../php/genero/controlador_genero.php?accion=listar",
         "columns": [
             { "data": "gene_codi"} ,
             { "data": "gene_nomb"} ,

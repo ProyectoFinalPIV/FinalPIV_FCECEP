@@ -5,7 +5,7 @@ function pais(){
          var datos=$("#fpais").serialize();
          $.ajax({
             type:"get",
-            url:"./php/pais/controlador_pais.php",
+            url:"../../php/pais/controlador_pais.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -53,7 +53,7 @@ function pais(){
 
                     var request = $.ajax({
                         method: "get",
-                        url: "./php/pais/controlador_pais.php",
+                        url: "../../php/pais/controlador_pais.php",
                         data: {codigo: codigo, accion:'borrar'},
                         dataType: "json"
                     })
@@ -106,14 +106,14 @@ function pais(){
 //Gestión Nuevo País
     $("#contenido").on("click","button#nuevo",function(){
         $("#titulo").html("Nuevo Pais");
-        $("#nuevo-editar" ).load("./php/pais/nuevo_pais.php"); 
+        $("#nuevo-editar" ).load("../../php/pais/nuevo_pais.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#pais").removeClass("show");
         $("#pais").addClass("hide");
          $.ajax({
              type:"get",
-             url:"./php/pais/controlador_pais.php",
+             url:"../../php/pais/controlador_pais.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -130,7 +130,7 @@ function pais(){
       var datos=$("#fpais").serialize();
        $.ajax({
             type:"get",
-            url:"./php/pais/controlador_pais.php",
+            url:"../../php/pais/controlador_pais.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -163,14 +163,14 @@ function pais(){
        //Recupera datos del fromulario
        var codigo = $(this).data("codigo");
        /*var municipio;*/
-        $("#nuevo-editar").load("./php/pais/editar_pais.php");
+        $("#nuevo-editar").load("../../php/pais/editar_pais.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#pais").removeClass("show");
         $("#pais").addClass("hide");
        $.ajax({
            type:"get",
-           url:"./php/pais/controlador_pais.php",
+           url:"../../php/pais/controlador_pais.php",
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
            }).done(function( pais ) {        
@@ -189,7 +189,7 @@ function pais(){
 
            $.ajax({
              type:"get",
-             url:"./php/pais/controlador_pais.php",
+             url:"../../php/pais/controlador_pais.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
@@ -215,7 +215,7 @@ $(document).ready(() => {
   $("#contenido").off("click","button#grabar");
   $("#titulo").html("Listado de Paises");
   dt = $("#tabla").DataTable({
-        "ajax": "php/pais/controlador_pais.php?accion=listar",
+        "ajax": "../../php/pais/controlador_pais.php?accion=listar",
         "columns": [
             { "data": "pais_id"} ,
             { "data": "pais_nom" },
