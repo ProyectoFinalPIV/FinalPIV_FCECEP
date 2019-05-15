@@ -30,7 +30,8 @@
 		</tbody>
 
 	</table>
+	<li><a  class = "reporte" href="../pais/exPDF.php" target="_blank"><i class="fa fa-building"></i> Reporte en PDF</a></li>
 
 </div><!-- /.box-body -->  
-<script src="js/funcionesPais.js"></script>
+<script src="../../js/funcionesPais.js"></script>
 </div>  <!-- codigo listo, funcionando -->

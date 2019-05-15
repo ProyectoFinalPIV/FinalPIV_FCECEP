@@ -31,7 +31,9 @@
 		</tbody>
 
 	</table>
-
+	<li><a  class = "reporte" href="../ciudad/exPDF.php" target="_blank"><i class="fa fa-building"></i> Reporte en PDF</a></li>
+	<!--<a class = "reporte" href="../../recursos/reporte/exPDF.php" target="_blank" role="button">Reporte</a>-->
+<!--<button class = "reporte" href="../../recursos/reporte/exPDF.php" target="_blank"><i class="fa fa-building"></i>Reporte PDF</button>-->
 </div><!-- /.box-body -->  
-<script src="js/funcionesCiudad.js"></script>
+<script src="../../js/funcionesCiudad.js"></script>
 </div> <!-- codigo listo, funcionando -->

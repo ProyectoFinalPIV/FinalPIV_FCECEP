@@ -40,7 +40,8 @@
 		</tbody>
 
 	</table>
+	<li><a  class = "reporte" href="../cliente/exPDF.php" target="_blank"><i class="fa fa-building"></i> Reporte en PDF</a></li>
 
 </div><!-- /.box-body -->  
-<script src="js/funcionesCliente.js"></script>
+<script src="../../js/funcionesCliente.js"></script>
 </div> <!-- codigo listo, funcionando -->

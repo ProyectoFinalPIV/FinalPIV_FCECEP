@@ -30,7 +30,8 @@
 		</tbody>
 
 	</table>
+	<li><a  class = "reporte" href="../genero/exPDF.php" target="_blank"><i class="fa fa-building"></i> Reporte en PDF</a></li>
 
 </div><!-- /.box-body -->  
-<script src="js/funcionesGenero.js"></script>
+<script src="../../js/funcionesGenero.js"></script>
 </div> <!-- codigo listo, funcionando -->

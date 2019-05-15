@@ -33,7 +33,8 @@
 		</tbody>
 
 	</table>
+	<li><a  class = "reporte" href="../farmacia/exPDF.php" target="_blank"><i class="fa fa-building"></i> Reporte en PDF</a></li>
 
 </div><!-- /.box-body -->  
-<script src="js/funcionesFarmacia.js"></script>
+<script src="../../js/funcionesFarmacia.js"></script>
 </div>  <!-- codigo listo, funcionando -->
