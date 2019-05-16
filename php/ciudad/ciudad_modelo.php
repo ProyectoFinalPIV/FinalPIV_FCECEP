@@ -1,5 +1,6 @@
 <?php
-    require_once("../modeloAbstractoDB.php");
+    //require_once("../modeloAbstractoDB.php");
+    require_once("../../php/modeloAbstractoDB.php");
     class Ciudad extends ModeloAbstractoDB {
 		private $ciudad_id;
 		private $ciudad_nom;

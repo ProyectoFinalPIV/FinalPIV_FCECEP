@@ -6,7 +6,7 @@
 		protected $db_name = "farmacias";
 		protected $query;
 		protected $rows = array();
-		private $conexion;
+		protected $conexion;
 		
 		# m�todos abstractos para Gesti�n de clases que hereden
 		abstract protected function consultar();

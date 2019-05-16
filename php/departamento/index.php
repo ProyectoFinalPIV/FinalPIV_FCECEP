@@ -20,7 +20,7 @@
 	<thead>
 		<tr>
 			<th>Codigo</th>
-			<th>Empleado</th>
+			<th>Nombre</th>
 			<th>Pais</th>
 			<th>&nbsp;</th>
 			<th>&nbsp;</th>

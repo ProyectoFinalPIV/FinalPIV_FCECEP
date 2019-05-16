@@ -48,7 +48,7 @@ function TablaBasica($titulos, $datos)
     foreach($titulos as $col)
         //utf8 para manejo de tildes - https://bit.ly/2LKfSbb
         $this->Cell(35,7,utf8_decode($col),1);
-    $this->Ln();
+    $this->Ln();//Salto de línea para generar otra fila
     
     // Datos
     foreach($datos as $row)
@@ -118,7 +118,9 @@ function TablaBasica($titulos, $datos)
 }
 
 
-$pdf = new PDF();
+$pdf = new PDF('L', 'mm', 'A4'); //hoja Horizontal
+#Establecemos los márgenes izquierda, arriba y derecha: 
+$pdf->SetMargins(3, 20 , 3); 
 // T�tulos de las columnas
 $titulos = array('Código', 'Cedula', 'Documento', 'Género', 'Nombre', 'Primer Apellido', 'Segundo Apellido', 'fecha de Nacimiento', 'Teléfono', 'Celular', 'Dirección', 'Ciudad');
 // Carga de datos
@@ -126,6 +128,8 @@ $datos = $pdf->cargarDatos();
 $pdf->SetFont('Arial','',10);
 $pdf->AddPage();
 $pdf->TablaBasica($titulos,$datos);
+#$pdf=new FPDF('L','mm','Letter'); //Poner hoja horizontal
+#$pdf=new FPDF('L', 'mm', 'A4'); //Poner hoja horizontal
 
 #$pdf->TablaMejorada($titulos,$datos);
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-04-2019 a las 22:21:56
+-- Tiempo de generación: 16-05-2019 a las 05:34:50
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
 
@@ -99,10 +99,17 @@ CREATE TABLE `tb_cliente` (
   `cliente_apel2` varchar(20) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Segundo apellido',
   `cliente_fec_nac` date NOT NULL COMMENT 'Fecha de Nacimiento',
   `cliente_tel` int(20) NOT NULL COMMENT 'Numero de telefono',
-  `cliente_cel` int(20) NOT NULL COMMENT 'Numero de celular',
+  `cliente_cel` int(25) NOT NULL COMMENT 'Numero de celular',
   `cliente_dir` varchar(70) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL COMMENT 'Direcci?n cliente',
   `ciudad_id` int(10) UNSIGNED NOT NULL COMMENT 'Ciudad del cliente'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tb_cliente`
+--
+
+INSERT INTO `tb_cliente` (`cliente_codi`, `cliente_cedula`, `docu_codi`, `gene_codi`, `cliente_nomb`, `cliente_apel`, `cliente_apel2`, `cliente_fec_nac`, `cliente_tel`, `cliente_cel`, `cliente_dir`, `ciudad_id`) VALUES
+(4, 24389122, 1, 1, 'maria', 'ma', 'v', '0000-00-00', 5555555, 315888888, 'cra1 calle2', 1);
 
 -- --------------------------------------------------------
 
@@ -180,6 +187,13 @@ CREATE TABLE `tb_farmacia` (
   `farma_tel` int(20) NOT NULL COMMENT 'Telefono de la farmacia'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tb_farmacia`
+--
+
+INSERT INTO `tb_farmacia` (`farma_codi`, `farma_nomb`, `farma_dir`, `ciudad_id`, `farma_tel`) VALUES
+(1, 'Farmacia A', 'Cra1 calle23', 1, 5555555);
+
 -- --------------------------------------------------------
 
 --
@@ -188,8 +202,16 @@ CREATE TABLE `tb_farmacia` (
 
 CREATE TABLE `tb_genero` (
   `gene_codi` int(10) UNSIGNED NOT NULL COMMENT 'codigo genero',
-  `gene_nomb` int(20) NOT NULL COMMENT 'nombre del genero'
+  `gene_nomb` varchar(20) NOT NULL COMMENT 'nombre del genero'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tb_genero`
+--
+
+INSERT INTO `tb_genero` (`gene_codi`, `gene_nomb`) VALUES
+(1, 'M'),
+(2, 'F');
 
 -- --------------------------------------------------------
 
@@ -253,6 +275,13 @@ CREATE TABLE `tb_producto` (
   `prove_codi` int(10) NOT NULL COMMENT 'Nombre del proveedor '
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tb_producto`
+--
+
+INSERT INTO `tb_producto` (`produ_codi`, `produ_nomb`, `produ_precio`, `produ_stock`, `prove_codi`) VALUES
+(1, 'Dolex', 1000, 60, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -289,6 +318,13 @@ CREATE TABLE `tb_proveedor` (
   `prove_repre` varchar(70) CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish2_ci NOT NULL COMMENT 'Nombre del Representante'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `tb_proveedor`
+--
+
+INSERT INTO `tb_proveedor` (`prove_codi`, `prove_cedula`, `docu_codi`, `prove_dir`, `ciudad_id`, `prove_nomb_comer`, `prove_tel`, `prove_repre`) VALUES
+(1, 5757575, 1, 'Cra1', 1, 'Glaxo', 7775777, 'Marco');
+
 -- --------------------------------------------------------
 
 --
@@ -318,9 +354,18 @@ INSERT INTO `tb_rol` (`rol_id`, `rol_nom`, `rol_desc`) VALUES
 --
 
 CREATE TABLE `tb_tipo_documento` (
-  `docu_codi` int(10) UNSIGNED NOT NULL COMMENT 'codigo tipo de documento',
+  `docu_codi` int(10) NOT NULL COMMENT 'codigo tipo de documento',
   `docu_nomb` varchar(30) CHARACTER SET utf8 COLLATE utf8_spanish2_ci NOT NULL COMMENT 'nombre tipo de documento'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `tb_tipo_documento`
+--
+
+INSERT INTO `tb_tipo_documento` (`docu_codi`, `docu_nomb`) VALUES
+(1, 'Cedula (CC)'),
+(2, 'Pasaporte (TP)'),
+(3, 'Cedula Extranjeria (CE)');
 
 -- --------------------------------------------------------
 
@@ -437,7 +482,8 @@ ALTER TABLE `tb_rol`
 -- Indices de la tabla `tb_tipo_documento`
 --
 ALTER TABLE `tb_tipo_documento`
-  ADD PRIMARY KEY (`docu_codi`);
+  ADD PRIMARY KEY (`docu_codi`),
+  ADD KEY `docu_nomb` (`docu_nomb`);
 
 --
 -- Indices de la tabla `tb_tipo_sangre`
@@ -465,13 +511,13 @@ ALTER TABLE `tb_admin_farmacia`
 -- AUTO_INCREMENT de la tabla `tb_ciudad`
 --
 ALTER TABLE `tb_ciudad`
-  MODIFY `ciudad_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ciudad_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_cliente`
 --
 ALTER TABLE `tb_cliente`
-  MODIFY `cliente_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo del cliente';
+  MODIFY `cliente_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo del cliente', AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_departamento`
@@ -501,13 +547,13 @@ ALTER TABLE `tb_factura`
 -- AUTO_INCREMENT de la tabla `tb_farmacia`
 --
 ALTER TABLE `tb_farmacia`
-  MODIFY `farma_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo de la farmacia';
+  MODIFY `farma_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo de la farmacia', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_genero`
 --
 ALTER TABLE `tb_genero`
-  MODIFY `gene_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo genero';
+  MODIFY `gene_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo genero', AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_login`
@@ -519,13 +565,13 @@ ALTER TABLE `tb_login`
 -- AUTO_INCREMENT de la tabla `tb_pais`
 --
 ALTER TABLE `tb_pais`
-  MODIFY `pais_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `pais_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_producto`
 --
 ALTER TABLE `tb_producto`
-  MODIFY `produ_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'C?digo del Producto ';
+  MODIFY `produ_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'C?digo del Producto ', AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_propietario`
@@ -537,7 +583,7 @@ ALTER TABLE `tb_propietario`
 -- AUTO_INCREMENT de la tabla `tb_proveedor`
 --
 ALTER TABLE `tb_proveedor`
-  MODIFY `prove_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo del proveedor';
+  MODIFY `prove_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo del proveedor', AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_rol`
@@ -549,7 +595,7 @@ ALTER TABLE `tb_rol`
 -- AUTO_INCREMENT de la tabla `tb_tipo_documento`
 --
 ALTER TABLE `tb_tipo_documento`
-  MODIFY `docu_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo tipo de documento';
+  MODIFY `docu_codi` int(10) NOT NULL AUTO_INCREMENT COMMENT 'codigo tipo de documento', AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tb_tipo_sangre`

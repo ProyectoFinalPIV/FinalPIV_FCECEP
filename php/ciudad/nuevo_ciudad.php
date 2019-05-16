@@ -1,8 +1,8 @@
 <!-- quick email widget -->
 <div id="seccion-ciudad">
 	<div class="box-header">
-    	<i class="far fa-building" aria-hidden="true">&nbspGestión de Ciudad</i>
-        <!-- tools box -->
+    	<i class="fa fa-building" aria-hidden="true">&nbspGestión de Ciudad</i>
+        <!-- tools box class="far fa-building" -->
         <div class="pull-right box-tools">
         	<button class="btn btn-info btn-sm btncerrar2" data-toggle="tooltip" title="Cerrar"><i class="fa fa-times-circle"></i></button>
         </div><!-- /. tools -->
@@ -21,7 +21,7 @@
     
                 <form class="form-horizontal" role="form"  id="fciudad">
 
-
+                   <fieldset>
  					<div class="form-group">
                         <label class="control-label col-sm-2" for="ciudad_id">Codigo:</label>
                         <div class="col-sm-10">

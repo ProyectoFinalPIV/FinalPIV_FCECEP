@@ -1,5 +1,10 @@
+<?php
+session_start();
+$user = $_SESSION['user'];
+?>
+
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <title>Gestion de Farmacias</title>
   <meta charset="utf-8">
@@ -7,10 +12,9 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  
-  <link rel="shortcut icon" href="img/favicon.png">
-  <link rel="stylesheet" type="text/css" media="screen" href="css/estilo.css" />
-  <link rel="stylesheet" type="text/css" media="screen" href="bootstrap/css/styles.css" />
+  <link rel="shortcut icon" href="../../img/favicon.png">
+  <link rel="stylesheet" type="text/css" media="screen" href="../../css/estilo.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="../../bootstrap/css/styles.css" />
   
 </head>
 <body>
@@ -28,7 +32,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>                        
                 </button>
-                <a class="button" href="index.html"><img src="imagenes/editar.png"></a>
+                <a class="button" href="../../index.html"><img src="../../imagenes/editar.png"></a>
             </div>  
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -36,11 +40,10 @@
                     <li><a href="#services">SERVICES</a></li>
                     <li><a href="#portfolio">PORTFOLIO</a></li>
                     <!--<li><a href="#contact">CONTACT</a></li>-->
-                    <ul class="nav navbar-nav navbar-right" id="este">
-                        <li><a href="php/login/login.html"><span class="glyphicon glyphicon-user"></span>INICIAR SESION /</a></li>
-                        <!--<span style="color:#fff;" class="hidden-xs hidden-sm">|</span>-->
-                        <li><a id="frm" href="php/login/index.php"><span class="glyphicon glyphicon-pencil"></span>REGISTRARSE</a>
-                        <li><a class="btn btn-info" href="php/producto/index.php" role="button"><i class="fa fa-shopping-cart"></i></a></li>    
+                    <ul class="nav navbar-nav navbar-right" id="estes">
+                        <li><a href="#"><i class="fa fa-user"><?php echo $user; ?></i></a></li>
+                        <li><a href="./logout.php">CERRAR</a></li>
+                        <li><a class="btn btn-info carro" href="#" role="button"><i class="fa fa-shopping-cart"></i></a></li>    
                     </ul>
                 </ul>
                 
@@ -72,72 +75,16 @@
         
     </div>
 
-    <div class="container" id="mycarrusel"><!--nombre quitar-->
-        <div class="col-sm-12">
-            <div id="myCarousel" class="carousel slide ok" data-ride="carousel">
-                <!-- Carousel indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
-                </ol>   
-                <!-- Wrapper for carousel items -->
-                <div class="carousel-inner" role="listbox">
-                    <div class="item active">
-                        <img src="dist/img/foto1.jpg" alt="First Slide">
-                        <div class="carousel-caption">
-                            <h3>titulo1</h3>
-                            <p>este es un parrafo1</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="dist/img/foto2.jpg" alt="Second Slide">
-                        <div class="carousel-caption">
-                                <h3>titulo2</h3>
-                                <p>este es un parrafo2</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="dist/img/foto3.jpg" alt="Third Slide">
-                        <div class="carousel-caption">
-                                <h3>titulo3</h3>
-                                <p>este es un parrafo3</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Carousel controls -->
-                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="carousel-control right" href="#myCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <div class="container">
-        <!--<div class="panel-group"><div class="panel panel-primary" id="opciones2">
-            <div class="panel-heading">Tablas Maestras</div>
-                <div class="panel-body">
-                    <div class="form-group" id="opciones">        
-                        <div class="col-sm-10">
-                            <a class="btn btn-primary" href="php/comuna/index.php" role="button">Comuna</a>
-                            <a class="btn btn-primary" href="php/municipio/index.php" role="button">Municipio</a>
-                            <a class="btn btn-primary" href="php/departamento/index.php" role="button">Departamento</a>
-                            <a class="btn btn-primary" href="php/pais/index.php" role="button">Pais</a>
-                        </div>
-                    </div>
-                </div>
-        </div>-->
+       
 
-        <div class="panel-group hide" id="contenedor"><div class="panel panel-primary">
+        <div class="panel-group" id="contenedor"><div class="panel panel-primary"> <!--cambio-->
             <div class="panel-heading" id="titulo"></div>
                 <div class="panel-body">
                     <div class="form-group" id="contenido"> 
-                            <!--<div class="tabla table-responsive">
+                            <div class="tabla table-responsive"> <!--cambio-->
 
-                                    <table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0">
+                                    <table id="tablas" class="table table-striped table-bordered table-hover" cellspacing="0">
                                         <thead>
                                             <tr>
                                                 <th>Codigo</th>
@@ -146,17 +93,17 @@
                                                 <th>Stock</th>
                                                 <th>Proveedor</th>
                                                 <th>Tipo Producto</th>
-                                                <th>Añadir</th>
+                                                <th>&nbsp;</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        
+                                            
                                         </tbody>
                                 
                                     </table>
                                 
-                            </div>//.box-body -->        
+                            </div><!-- /.box-body -->        
                     
                     </div>
                 </div>
@@ -207,15 +154,15 @@
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
-    <!-- Funciones de Lógica de negocio -->
-    <script src="js/funcionesJquery.js"></script>
+    <!-- Funciones de Lógica de negocio-->
+    <script src="../../js/funcionesJquery.js"></script>
     
-   <!-- <script src="js/funcionesMostrarProdu.js"></script>-->
-    <!-- Funciones de Lógica de neogcio -->
+    <script src="../../js/funcionesMostrarProdu.js"></script>
+    <!-- Funciones de Lógica de neogcio-->
     <script>
-        $(document).ready(Inicio);
-        $(document).ready(login); //para inicio de seccion
-       // $(document).ready(ingreso);
+        //$(document).ready(Inicio);
+        $(document).ready(login);
+       
         
     </script>
    

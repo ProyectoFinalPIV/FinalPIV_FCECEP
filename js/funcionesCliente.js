@@ -5,7 +5,7 @@ function cliente(){
          var datos=$("#fcliente").serialize();
          $.ajax({
             type:"get",
-            url:"php/cliente/controlador_cliente.php",
+            url:"../../php/cliente/controlador_cliente.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -53,7 +53,7 @@ function cliente(){
 
                     var request = $.ajax({
                         method: "get",
-                        url: "php/cliente/controlador_cliente.php",
+                        url: "../../php/cliente/controlador_cliente.php",
                         data: {codigo: codigo, accion:'borrar'},
                         dataType: "json"
                     })
@@ -105,7 +105,7 @@ function cliente(){
        //Pendiente por Validar
     $("#contenido").on("click","button#nuevo",function(){
         $("#titulo").html("Nuevo Cliente");
-        $("#nuevo-editar" ).load("php/cliente/nuevo_cliente.php"); 
+        $("#nuevo-editar" ).load("../../php/cliente/nuevo_cliente.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#cliente").removeClass("show");
@@ -113,7 +113,7 @@ function cliente(){
            //Cargar Listado Documento
         $.ajax({
              type:"get",
-             url:"php/documento/controlador_documento.php",
+             url:"../../php/documento/controlador_documento.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -127,7 +127,7 @@ function cliente(){
             //Cargar Listado Genero
          $.ajax({
              type:"get",
-             url:"php/genero/controlador_genero.php",
+             url:"../../php/genero/controlador_genero.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -141,7 +141,7 @@ function cliente(){
              //Cargar Listado Documento
          $.ajax({
              type:"get",
-             url:"php/ciudad/controlador_ciudad.php",
+             url:"../../php/ciudad/controlador_ciudad.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
@@ -158,7 +158,7 @@ function cliente(){
      var datos=$("#fcliente").serialize();
        $.ajax({
             type:"get",
-            url:"php/cliente/controlador_cliente.php",
+            url:"../../php/cliente/controlador_cliente.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -193,14 +193,14 @@ function cliente(){
        var documento;
        var genero;
        var ciudad;
-        $("#nuevo-editar").load("php/cliente/editar_cliente.php");
+        $("#nuevo-editar").load("../../php/cliente/editar_cliente.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#cliente").removeClass("show");
         $("#cliente").addClass("hide");
        $.ajax({
            type:"get",
-           url:"php/cliente/controlador_cliente.php",
+           url:"../../php/cliente/controlador_cliente.php",
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
            }).done(function( cliente ) {        
@@ -231,7 +231,7 @@ function cliente(){
             //Cargar Listado Documento
            $.ajax({
              type:"get",
-             url:"php/documento/controlador_documento.php",
+             url:"../../php/documento/controlador_documento.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
@@ -249,7 +249,7 @@ function cliente(){
                //Cargar Listado Generos
            $.ajax({
              type:"get",
-             url:"php/genero/controlador_genero.php",
+             url:"../../php/genero/controlador_genero.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
@@ -266,7 +266,7 @@ function cliente(){
                //Cargar Listado ciudades
            $.ajax({
              type:"get",
-             url:"php/ciudad/controlador_ciudad.php",
+             url:"../../php/ciudad/controlador_ciudad.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
@@ -294,7 +294,7 @@ $(document).ready(() => {
   $("#contenido").off("click","button#grabar");
   $("#titulo").html("Listado de Clientes");
   dt = $("#tabla").DataTable({
-        "ajax": "php/cliente/controlador_cliente.php?accion=listar",
+        "ajax": "../../php/cliente/controlador_cliente.php?accion=listar",
         "columns": [
             { "data": "cliente_codi"} ,
             { "data": "cliente_cedula"} ,

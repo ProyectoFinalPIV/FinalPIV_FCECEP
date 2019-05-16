@@ -1,8 +1,8 @@
 <!-- quick email widget -->
 <div id="seccion-documento">
 	<div class="box-header">
-    	<i class="far fa-building" aria-hidden="true">&nbspGestión de Documento</i>
-        <!-- tools box -->
+    	<i class="fa fa-building" aria-hidden="true">&nbspGestión de Documento</i>
+        <!-- tools box far fa-building -->
         <div class="pull-right box-tools">
         	<button class="btn btn-info btn-sm btncerrar2" data-toggle="tooltip" title="Cerrar"><i class="fa fa-times-circle"></i></button>
         </div><!-- /. tools -->
@@ -29,9 +29,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="docu_codi">Nombre:</label>
+                        <label class="control-label col-sm-2" for="docu_nomb">Nombre:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="docu_codi" name="docu_codi" placeholder="Ingrese Genero"
+                            <input type="text" class="form-control" id="docu_nomb" name="docu_nomb" placeholder="Ingrese Tipo Documento"
                             value = "">
                         </div>
                     </div>
