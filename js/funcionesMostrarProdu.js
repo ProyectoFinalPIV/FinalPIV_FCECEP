@@ -81,7 +81,7 @@ $(document).ready(() => {
     $("#contenido").off("click","button#nuevo");
     $("#contenido").off("click","button#grabar");
     $("#titulo").html("Listado de Productos");
-    dt = $("#tabla").DataTable({
+    dt = $("#tablas").DataTable({
           "ajax": "../../php/producto/controladorProducto.php?accion=listar",
           "columns": [
               { "data": "produ_codi"} ,
