@@ -32,7 +32,7 @@ $user = $_SESSION['user'];
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>                        
                 </button>
-                <a class="button" href="../../index.html"><img src="../../imagenes/editar.png"></a>
+                <a class="button" href="../../index.html"><img src="../../recursos/img/editar.png"></a>
             </div>  
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">

@@ -1,11 +1,12 @@
 var dt;
 
-function persona(){
+function login(){
     $("#contenido").on("click","button#actualizar",function(){
          var datos=$("#flogin").serialize();
+         console.log(datos);
          $.ajax({
             type:"get",
-            url:"./php/login/controladorLogin.php",
+            url:"../login/controladorLogin.php",
             data: datos,
             dataType:"json"
           }).done(function( resultado ) {
@@ -16,7 +17,7 @@ function persona(){
                     'success'
                 )     
                 dt.ajax.reload();
-                $("#titulo").html("Listado persona");
+                $("#titulo").html("Listado Login");
                 $("#nuevo-editar").html("");
                 $("#nuevo-editar").removeClass("show");
                 $("#nuevo-editar").addClass("hide");
@@ -38,7 +39,7 @@ function persona(){
 
         swal({
               title: '¿Está seguro?',
-              text: "¿Realmente desea borrar el persona con codigo : " + codigo + " ?",
+              text: "¿Realmente desea borrar el Usuario con codigo : " + codigo + " ?",
               type: 'warning',
               showCancelButton: true,
               confirmButtonColor: '#3085d6',
@@ -49,7 +50,7 @@ function persona(){
 
                     var request = $.ajax({
                         method: "get",
-                        url: "./php/login/controladorLogin.php",
+                        url: "../login/controladorLogin.php",
                         data: {codigo: codigo, accion:'borrar'},
                         dataType: "json"
                     })
@@ -58,7 +59,7 @@ function persona(){
                         if(resultado.respuesta == 'correcto'){
                             swal(
                                 'Borrado!',
-                                'El persona con codigo : ' + codigo + ' fue borrado',
+                                'El Usuario con codigo : ' + codigo + ' fue borrado',
                                 'success'
                             )     
                             dt.ajax.reload();                            
@@ -83,15 +84,15 @@ function persona(){
 
     });
 
-    /*$("#contenido").on("click","button.btncerrar2",function(){
-        $("#titulo").html("Listado de persona");
+    $("#contenido").on("click","button.btncerrar",function(){
+        $("#titulo").html("Listado de Usuarios");
         $("#nuevo-editar").html("");
         $("#nuevo-editar").removeClass("show");
         $("#nuevo-editar").addClass("hide");
         $("#login").removeClass("hide");
         $("#login").addClass("show");
 
-    })*/
+    })
 
     $("#contenido").on("click","button.btncerrar2",function(){
         $("#contenedor").removeClass("show");
@@ -99,27 +100,29 @@ function persona(){
         $("#contenido").html('')
     })
 
-    $("#contenido").on("click","button#nuevo",function(){
-        $("#titulo").html("Nuevo Persona");
-        $("#nuevo-editar" ).load("./php/login/nuevoLogin.php"); 
+    $("#contenido").on("click","button#nuevo2",function(){
+        $("#titulo").html("Nuevo Usuario");
+        $("#nuevo-editar" ).load("../login/nuevoLogin2.php"); 
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#login").removeClass("show");
         $("#login").addClass("hide");
          $.ajax({
              type:"get",
-             url:"./php/login/controladorLogin.php",
+             url:"../rol/controladorRol.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {   
               //console.log(resultado.data)           
-              $("#esta_civi_codi option").remove()       
-              $("#esta_civi_codi").append("<option selecte value=''>Seleccione un estado civil</option>")
+              $("#rol_id option").remove()       
+              $("#rol_id").append("<option selecte value=''>Seleccione un Rol</option>")
               $.each(resultado.data, function (index, value) { 
-                $("#esta_civi_codi").append("<option value='" + value.esta_civi_codi + "'>" + value.esta_civi_nomb + "</option>")
+                $("#rol_id").append("<option value='" + value.rol_id + "'>" + value.rol_nom + "</option>")
               });
            });
-    })
+    });
+
+    //graba el cliente su usuario
 
     $("#contenido").on("click","button#grabar",function(){
         /*var comu_codi = $("#comu_codi").attr("value");
@@ -128,11 +131,11 @@ function persona(){
         var datos = "comu_codi="+comu_codi+"&comu_nomb="+comu_nomb+"&muni_codi="+muni_codi;*/
       
       var datos=$("#flogin").serialize();
-      console.show(datos);
+      //console.log(datos);
 
       $.ajax({
             type:"get",
-            url:"./php/login/controladorLogin.php",
+            url:"php/login/controladorLogin.php",
             data: datos,
             dataType:"json"
             
@@ -144,12 +147,12 @@ function persona(){
                     'success'
                 )     
                 dt.ajax.reload();
-                $("#titulo").html("Listado persona");
-                $("#nuevo-editar").html("");
-                $("#nuevo-editar").removeClass("show");
-                $("#nuevo-editar").addClass("hide");
-                $("#login").removeClass("hide");
-                $("#login").addClass("show")
+                $("#titulo").html("Listado Productos");
+                $("#seccion-login").html("");
+                $("#seccion-login").removeClass("show");
+                //$("#nuevo-editar").addClass("hide");
+                //$("#login").removeClass("hide");
+                //$("#login").addClass("show")
              } else {
                 swal({
                   type: 'error',
@@ -160,114 +163,96 @@ function persona(){
         });
     });
 
+    //graba los usuarios creados por el adminFarma
+
+    $("#contenidos").on("click","button#grabar2",function(){
+      /*var comu_codi = $("#comu_codi").attr("value");
+      var comu_nomb = $("#comu_nomb").attr("value");
+      var muni_codi = $("#muni_codi").attr("value");
+      var datos = "comu_codi="+comu_codi+"&comu_nomb="+comu_nomb+"&muni_codi="+muni_codi;*/
+    
+    var datos=$("#flogin").serialize();
+    //console.log(datos);
+
+    $.ajax({
+          type:"get",
+          url:"../login/controladorLogin.php",
+          data: datos,
+          dataType:"json"
+          
+        }).done(function( resultado ) {
+            if(resultado.respuesta){
+              swal(
+                  'Grabado!!',
+                  'El registro se grabó correctamente',
+                  'success'
+              )     
+              dt.ajax.reload();
+                $("#titulo").html("Listado de Usuarios");
+                $("#nuevo-editar").html("");
+                $("#nuevo-editar").removeClass("show");
+                $("#nuevo-editar").addClass("hide");
+                $("#login").removeClass("hide");
+                $("#login").addClass("show")
+           } else {
+              swal({
+                type: 'error',
+                title: 'Oops...',
+                text: 'Something went wrong!'                         
+              })
+          }
+      });
+  });
+
 
     $("#contenido").on("click","a.editar",function(){     
-       $("#titulo").html("Editar Persona");
+       $("#titulo").html("Editar Usuario");
        //Recupera datos del fromulario
        var codigo = $(this).data("codigo");
-       var estado, documento, municipio, barrio, genero, sangre;
-       
-        $("#nuevo-editar").load("./php/login/editarLogin.php");
+       var rol;       
+        $("#nuevo-editar").load("../login/editarLogin.php");
         $("#nuevo-editar").removeClass("hide");
         $("#nuevo-editar").addClass("show");
         $("#login").removeClass("show");
         $("#login").addClass("hide");
        $.ajax({
            type:"get",
-           url:"./php/login/controladorLogin.php", 
+           url:"../login/controladorLogin.php", 
            data: {codigo: codigo, accion:'consultar'},
            dataType:"json"
-           }).done(function( persona ) {
-                if(persona.respuesta === "no existe"){
+           }).done(function( login ) {
+                if(login.respuesta === "no existe"){
                     swal({
                       type: 'error',
                       title: 'Oops...',
                       text: 'Persona no existe!'                         
                     })
                 } else {
-                    $("#perso_codi").val(persona.codigo);                   
-                    $("#perso_nomb").val(persona.persona);
-                    $("#perso_apel").val(persona.persona);
-                    $("#perso_apel_2").val(persona.persona);
-                    estado = persona.estado;
-                    documento = persona.documento;
-                    municipio = persona.municipio;
-                    barrio = persona.barrio;
-                    $("#perso_dire").val(persona.persona);
-                    $("#perso_tele_casa").val(persona.persona);
-                    $("#perso_tele_ofic").val(persona.persona);
-                    $("#perso_celu").val(persona.persona);
-                    $("#perso_mail").val(persona.persona);
-                    $("#ocup_codi").val(persona.persona);
-                    genero = persona.genero;
-                    sangre = persona.sangre;
-
-                }
+                    $("#login_codi").val(login.codigo);                   
+                    $("#login_nick").val(login.usuario);
+                    $("#login_pass").val(login.contrasena);
+                    $("#login_esta").val(login.estado);
+                    rol = login.rol;
+                   }
            });
 
            $.ajax({
              type:"get",
-             url:"./php/login/controladorLogin.php",
+             url:"../rol/controladorRol.php",
              data: {accion:'listar'},
              dataType:"json"
            }).done(function( resultado ) {                     
-              $("#esta_civi_codi option").remove();
+              $("#rol_id option").remove();
               $.each(resultado.data, function (index, value) { 
                 
-                if(estado === value.esta_civi_codi){
-                  $("#esta_civi_codi").append("<option selected value='" + value.esta_civi_codi + "'>" + value.esta_civi_nomb + "</option>")
+                if(rol === value.rol_id){
+                  $("#rol_id").append("<option selected value='" + value.rol_id + "'>" + value.rol_nom + "</option>")
                 }else {
-                  $("#esta_civi_codi").append("<option value='" + value.esta_civi_codi + "'>" + value.esta_civi_nomb + "</option>")
+                  $("#rol_id").append("<option value='" + value.rol_id + "'>" + value.rol_nom + "</option>")
                 }
               });
-           })
-           .done(function( resultado ) {                     
-            $("#docu_codi option").remove();
-            $.each(resultado.data, function (index, value) { 
-              
-              if(documento === value.docu_codi){
-                $("#docu_codi").append("<option selected value='" + value.docu_codi + "'>" + value.docu_nomb + "</option>")
-              }else {
-                $("#docu_codi").append("<option value='" + value.docu_codi + "'>" + value.docu_nomb + "</option>")
-              }
-            });
-         })
-         .done(function( resultado ) {                     
-          $("#muni_codi_exte option").remove();
-          $.each(resultado.data, function (index, value) { 
-            
-            if(municipio === value.muni_codi_exte){
-              $("#muni_codi_exte").append("<option selected value='" + value.muni_codi_exte + "'>" + value.muni_nomb + "</option>")
-            }else {
-              $("#muni_codi_exte").append("<option value='" + value.muni_codi_exte + "'>" + value.muni_nomb + "</option>")
-            }
-          });
-       })
-       .done(function( resultado ) {                     
-        $("#gene_codi option").remove();
-        $.each(resultado.data, function (index, value) { 
-          
-          if(genero === value.gene_codi){
-            $("#gene_codi").append("<option selected value='" + value.gene_codi + "'>" + value.gene_nomb + "</option>")
-          }else {
-            $("#gene_codi").append("<option value='" + value.gene_codi + "'>" + value.gene_nomb + "</option>")
-          }
-        });
-     })
-     .done(function( resultado ) {                     
-      $("#sang_codi option").remove();
-      $.each(resultado.data, function (index, value) { 
-        
-        if(sangre === value.sang_codi){
-          $("#sang_codi").append("<option selected value='" + value.sang_codi + "'>" + value.sang_nomb + "</option>")
-        }else {
-          $("#sang_codi").append("<option value='" + value.sang_codi + "'>" + value.sang_nomb + "</option>")
-        }
+           });
       });
-   });
-
-
-       })
 }
 
 $(document).ready(() => {
@@ -276,77 +261,28 @@ $(document).ready(() => {
   $("#contenido").off("click","a.borrar");
   $("#contenido").off("click","button#nuevo");
   $("#contenido").off("click","button#grabar");
-
-  
-  $("#titulo").html("Listado de Nuevo Persona"); 
-  
+  $("#titulo").html("Listado de Usuarios"); 
   dt = $("#tabla").DataTable({
-        
-        "columns": [
-        $("#titulo").html("Nuevo Persona"),
-        $("#nuevo-editar" ).load("./php/login/nuevoLogin.php"),
-        $("#opciones2").html(""),
-        $("#opciones2").removeClass("hide"),
-        $("#opciones2").addClass("show"),
-        $("#nuevo-editar").removeClass("hide"),
-        $("#nuevo-editar").addClass("show"),
-        $("#login").removeClass("show"),
-        $("#login").addClass("hide"),
-         $.ajax({
-             type:"get",
-             url:"./php/login/controladorLogin.php",
-             data: {accion:'listar'},
-             dataType:"json"
-           }).done(function( resultado ) {   
-              //console.log(resultado.data)           
-              $("#esta_civi_codi option").remove()       
-              $("#esta_civi_codi").append("<option selecte value=''>Seleccione un estado civil</option>")
-              $.each(resultado.data, function (index, value) { 
-                $("#esta_civi_codi").append("<option value='" + value.esta_civi_codi + "'>" + value.esta_civi_nomb + "</option>")
-              });
-           })
-           .done(function( resultado ) {   
-            //console.log(resultado.data)           
-            $("#docu_codi option").remove()       
-            $("#docu_codi").append("<option selecte value=''>Seleccione Tipo Documento</option>")
-            $.each(resultado.data, function (index, value) { 
-              $("#docu_codi").append("<option value='" + value.docu_codi + "'>" + value.docu_nomb + "</option>")
-            });
-         })
-         .done(function( resultado ) {   
-          //console.log(resultado.data)           
-          $("#muni_codi_expe option").remove()       
-          $("#muni_codi_expe").append("<option selecte value=''>Seleccione Municipio Expedicion</option>")
-          $.each(resultado.data, function (index, value) { 
-            $("#muni_codi_expe").append("<option value='" + value.muni_codi_expe + "'>" + value.muni_nomb + "</option>")
-          });
-       })
-       .done(function( resultado ) {   
-        //console.log(resultado.data)           
-        $("#barr_codi option").remove()       
-        $("#barr_codi").append("<option selecte value=''>Seleccione un Barrio</option>")
-        $.each(resultado.data, function (index, value) { 
-          $("#barr_codi").append("<option value='" + value.barrio_codi + "'>" + value.barr_nomb + "</option>")
-        });
-     })
-     .done(function( resultado ) {   
-      //console.log(resultado.data)           
-      $("#gene_codi option").remove()       
-      $("#gene_codi").append("<option selecte value=''>Seleccione Genero</option>")
-      $.each(resultado.data, function (index, value) { 
-        $("#gene_codi").append("<option value='" + value.gene_codi + "'>" + value.gene_nomb + "</option>")
-      });
-   })
-   .done(function( resultado ) {   
-    //console.log(resultado.data)           
-    $("#sang_codi option").remove()       
-    $("#sang_codi").append("<option selecte value=''>Seleccione Tipo Sangre</option>")
-    $.each(resultado.data, function (index, value) { 
-      $("#sang_codi").append("<option value='" + value.sang_codi + "'>" + value.sang_nomb + "</option>")
-    });
- })
-  ]
-  });
-
-  persona();
+    "ajax": "../login/controladorLogin.php?accion=listar",
+    "columns": [
+        { "data": "login_codi"} ,
+        { "data": "login_nick" },
+        { "data": "login_pass" },
+        { "data": "login_esta" },
+        { "data": "rol_nom" },
+        { "data": "login_codi",
+            render: function (data) {
+                      return '<a href="#" data-codigo="'+ data + 
+                             '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash"></i></a>' 
+            }
+        },
+        { "data": "login_codi",
+            render: function (data) {
+                      return '<a href="#" data-codigo="'+ data + 
+                             '" class="btn btn-info btn-sm editar"> <i class="fa fa-edit"></i></a>';
+            }
+        }
+    ]
+   });
+login();
 });

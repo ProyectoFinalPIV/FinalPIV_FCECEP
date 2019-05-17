@@ -93,11 +93,11 @@
 		public function lista() {
 			$this->query = "
 			SELECT produ_codi, produ_nomb, produ_precio, produ_stock, 
-			/*p.*/prove_codi/*, m.prove_nomb_comer,*//* p.tipo_prod_codi, t.tipo_prod_nomb*/
-			FROM tb_producto /* as p inner join tb_proveedor as m
-			ON (p.Prove_codi = m.Prove_codi) 
-			inner join tb_tipo_producto as t
-			ON (p.tipo_prod_codi = t.tipo_prod_codi)*/ order by produ_codi
+			p.Prove_codi, m.prove_nomb_comer, p.tipo_prod_codi, t.tipo_prod_nomb
+			FROM tb_producto as p 
+			inner join tb_proveedor as m ON (p.prove_codi = m.prove_codi) 
+			inner join tb_tipo_producto as t ON (p.tipo_prod_codi = t.tipo_prod_codi)
+			ORDER BY produ_codi
 			";
 			
 			$this->obtener_resultados_query();
@@ -115,7 +115,7 @@
 					INSERT INTO tb_producto
 					(produ_codi, produ_nomb, produ_precio, produ_stock, Prove_codi, tipo_prod_codi)
 					VALUES
-					(NULL,'$produ_nomb', '$produ_precio','$produ_stock','$Prove_codi','$tipo_prod_codi')
+					('$produ_codi','$produ_nomb', '$produ_precio','$produ_stock','$Prove_codi','$tipo_prod_codi')
 					";
 				$resultado = $this->ejecutar_query_simple();
 				return $resultado;
@@ -129,7 +129,7 @@
 			$Nom_Prod= utf8_decode($Nom_Prod);
 			$this->query = "
 			UPDATE tb_producto
-			SET produ='$produ',
+			SET produ_nomb='$produ_nomb',
 			produ_precio='$produ_precio',
 			produ_stock='$produ_stock',
 			Prove_codi='$Prove_codi',
@@ -142,7 +142,7 @@
 		
 		public function borrar($produ_codi='') {
 			$this->query = "
-			DELETE FROM productos
+			DELETE FROM tb_productos
 			WHERE produ_codi = '$produ_codi'
 			";
 			$resultado = $this->ejecutar_query_simple();
