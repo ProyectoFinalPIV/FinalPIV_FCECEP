@@ -1,7 +1,12 @@
 <?php
- 
+ /*$datos = array("login_codi=".$_POST['login_codi'], "&login_nick=".$_POST['login_nick'], "&login_pass=".$_POST['login_pass'], 
+                "&login_esta=".$_POST['login_esta'], "&rol_id=".$_POST['rol_id'], $_POST['accion']);
+foreach($datos as $clave){
+                echo $clave;
+}*/
 require_once 'login_modelo.php';
 $datos = $_GET;
+
 switch ($_GET['accion']){
     case 'editar':
         $login = new Login();
@@ -44,29 +49,17 @@ switch ($_GET['accion']){
         $login = new Login();
         $login->consultar($datos['codigo']);
 
-        if($login->getPerso_codi() == null) {
+        if($login->getLogin_codi() == null) {
             $respuesta = array(
                 'respuesta' => 'no existe'
             );
         }  else {
             $respuesta = array(
-                'codigo' => $login->getPerso_codi(),
-                'nombre' => $login->getPerso_nomb(),
-                'apellido1' => $login->getPerso_apel(),
-                'apellido2' => $login->getPerso_apel_2(),
-                'estadoC' => $login->getEsta_civi_codi(),
-                'documento' => $login->getDocu_codi(),
-                'municipio' => $login->getMuni_codi_expe(),
-                'barrio' => $login->getBarr_codi(),
-                'direccion' => $login->getPerso_dire(),
-                'telefono1' => $login->getPerso_tele_casa(),
-                'telefono2' => $login->getPerso_tele_ofic(),
-                'celular' => $login->getPerso_celu(),
-                'email' => $login->getPerso_mail(),
-                'ocupacion' => $login->getOcup_codi(),
-                'genero' =>$login->getGene_codi(),
-                'sangre' => $login->getSang_codi(),
-
+                'codigo' => $login->getLogin_codi(),
+                'usuario' => $login->getLogin_nick(),
+                'contrasena' => $login->getLogin_pass(),
+                'estado' => $login->getLogin_esta(),
+                'rol' => $login->getRol_id(),
                 'respuesta' =>'existe'
             );
         }
