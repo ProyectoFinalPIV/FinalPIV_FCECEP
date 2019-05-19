@@ -131,4 +131,4 @@ $(document).ready(function(){
 		</form>
     </div>        
 </div>
-<script src="js/funcionesLogin.js"></script>
+<script src="js/funcionesLogin2.js"></script>
