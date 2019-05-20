@@ -32,7 +32,7 @@ $user = $_SESSION['user'];
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>                        
                 </button>
-                <a class="button" href="../../index.html"><img src="../../imagenes/editar.png"></a>
+                <a class="button" href="../../index.html"><img src="../../recursos/img/editar.png"></a>
             </div>  
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
@@ -42,7 +42,7 @@ $user = $_SESSION['user'];
                     <!--<li><a href="#contact">CONTACT</a></li>-->
                     <ul class="nav navbar-nav navbar-right" id="estes">
                         <li><a href="#"><i class="fa fa-user"><?php echo $user; ?></i></a></li>
-                        <li><a href="./logout.php">CERRAR</a></li>
+                        <li><a href="../logout.php">CERRAR</a></li>
                         <li><a class="btn btn-info carro" href="#" role="button"><i class="fa fa-shopping-cart"></i></a></li>    
                     </ul>
                 </ul>
@@ -57,10 +57,10 @@ $user = $_SESSION['user'];
                             <li class="dropdown" role="presentation" style="position: inherit; background-color: darkgrey; width: 275px;">
                                     <a id="categorias" href="#" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-list"></i> Categorías</span></a>
                                     <ul class="dropdown-menu category" aria-labelledby="categorias">
-                                            <li class="cuidado-personal" style="width: 276px;"><a href="#">ALIMENTOS Y BEBIDAS</a></li>
-                                            <li class="cuidado-personal" style="width: 276px;"><a href="#">ASEO Y HOGAR</a></li>
-                                            <li class="cuidado-personal" style="width: 276px;"><a href="#">BEBE</a></li>
-                                            <li class="cuidado-personal" style="width: 276px;"><a href="#">CUIDADO EN CASA</a>
+                                    <li class="cuidado-personal" data-codigo='1' style="width: 276px;"><a href="#">ALIMENTOS Y BEBIDAS</a></li>
+                                            <li class="cuidado-personal" data-codigo='2' style="width: 276px;"><a href="#">ASEO Y HOGAR</a></li>
+                                            <li class="cuidado-personal" data-codigo='3' style="width: 276px;"><a href="#">BEBE</a></li>
+                                            <li class="cuidado-personal" data-codigo='4' style="width: 276px;"><a href="#">CUIDADO EN CASA</a></li>
                                     </ul>
                             </li>
                             <li class="modulo-menu" style="background-color: rgb(38, 17, 223); width: 528.5px;">

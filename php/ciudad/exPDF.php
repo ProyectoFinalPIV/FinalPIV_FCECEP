@@ -1,8 +1,8 @@
 <?php
 require('../../recursos/reporte/fpdf.php');
 require_once("../../php/modeloAbstractoDB.php");
-include('./ciudad_modelo.php');
-$Ciudad = new Ciudad();
+include('./ciudad_modelo.php'); // cambia segun  carpeta
+$Ciudad = new Ciudad(); //aca cambia de acuerdo al modelo segun la carpeta empleado_modelo etc
 
 class PDF extends FPDF
 {
@@ -31,7 +31,7 @@ function cargarDatos()
     foreach($archivo as $linea)
         $datos[] = explode(';',trim($linea));
     return $datos;*/
-  $ciudad = new ciudad();
+  $ciudad = new ciudad(); // esto tambien cambia segun cada carpeta eejemplo por cliente etc
    $datos = $ciudad->lista();
    return $datos;
 

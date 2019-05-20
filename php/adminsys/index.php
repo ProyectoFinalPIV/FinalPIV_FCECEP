@@ -24,6 +24,14 @@
                 <?php 
                     switch ($_SESSION['rol']) {
                         case 1:
+                        default:
+                        //echo "<script language='javascript'>window.location='../../index.html';</script>";
+                        if (!isset($_SESSION['rol']))
+                            header("location:../../index.html");
+                //ejemplos: https://es.switch-case.com/55085356
+                        //http://decsai.ugr.es/~jfv/ed1/c/cdrom/cap4/cap42.htm#v_ej_b
+                        //http://hacerpaginaswebconphp.com/control-de-sesiones-en-php/
+
                 ?>            
                 <h1>Menú Administrador</h1>
                 <?php 
@@ -52,7 +60,6 @@
                                             switch ($_SESSION['rol']) {
                                                 case 1:
                                         ?>
-                                        <!--<a class="list-group-item" href="#php/profesores/index.php" id="profesores">Gestion Profesores</a>-->
                                         <a class="list-group-item" href="../../php/farmacia/index.php" id="farmacias">Gestion Farmacias</a>
                                         <a class="list-group-item" href="../../php/cliente/index.php" id="clientes">Gestion Clientes</a>
                                         <a class="list-group-item" href="../../php/genero/index.php" id="generos">Gestion Generos</a>
@@ -76,7 +83,7 @@
                                         }?>
                                     </div>
                                     <div class="list-group">
-                                        <a class="list-group-item active" href="./logout.php">Cerrar sesión</a>
+                                        <a class="list-group-item active" href="../logout.php">Cerrar sesión</a>
                                     </div>
                                 </div>
                            <!--  <p><a id="empresas" class="btn btn-danger btn-block" href="php/empresa/index.php" role="button">Empresas</a></p>
