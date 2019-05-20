@@ -1,11 +1,17 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
+<<<<<<< HEAD
 -- Tiempo de generación: 20-05-2019 a las 07:06:09
 -- Versión del servidor: 10.1.37-MariaDB
 -- Versión de PHP: 7.3.1
+=======
+-- Tiempo de generación: 19-05-2019 a las 02:17:34
+-- Versión del servidor: 10.1.32-MariaDB
+-- Versión de PHP: 7.2.5
+>>>>>>> 1b5dc2e89cef00bdc689ff784059df965da5b377
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -109,8 +115,12 @@ CREATE TABLE `tb_cliente` (
 --
 
 INSERT INTO `tb_cliente` (`cliente_codi`, `cliente_cedula`, `docu_codi`, `gene_codi`, `cliente_nomb`, `cliente_apel`, `cliente_apel2`, `cliente_fec_nac`, `cliente_tel`, `cliente_cel`, `cliente_dir`, `ciudad_id`) VALUES
+<<<<<<< HEAD
 (6, 1143657243, 1, 1, 'Eiman', 'Males', 'Hoyos', '2018-03-24', 23432142, 312456234, 'cra 56 cll 23', 1),
 (4, 24389122, 1, 1, 'maria', 'ma', 'v', '0000-00-00', 5555555, 315888888, 'cra1 calle2', 1);
+=======
+(6, 1143657243, 1, 1, 'Eiman', 'Males', 'Hoyos', '2018-03-24', 23432142, 312456234, 'cra 56 cll 23', 1);
+>>>>>>> 1b5dc2e89cef00bdc689ff784059df965da5b377
 
 -- --------------------------------------------------------
 
@@ -201,13 +211,6 @@ CREATE TABLE `tb_farmacia` (
   `farma_tel` int(20) NOT NULL COMMENT 'Telefono de la farmacia'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- Volcado de datos para la tabla `tb_farmacia`
---
-
-INSERT INTO `tb_farmacia` (`farma_codi`, `farma_nomb`, `farma_dir`, `ciudad_id`, `farma_tel`) VALUES
-(1, 'Farmacia A', 'Cra1 calle23', 1, 5555555);
-
 -- --------------------------------------------------------
 
 --
@@ -216,7 +219,7 @@ INSERT INTO `tb_farmacia` (`farma_codi`, `farma_nomb`, `farma_dir`, `ciudad_id`,
 
 CREATE TABLE `tb_genero` (
   `gene_codi` int(10) UNSIGNED NOT NULL COMMENT 'codigo genero',
-  `gene_nomb` varchar(20) NOT NULL COMMENT 'nombre del genero'
+  `gene_nomb` int(20) NOT NULL COMMENT 'nombre del genero'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
@@ -224,9 +227,14 @@ CREATE TABLE `tb_genero` (
 --
 
 INSERT INTO `tb_genero` (`gene_codi`, `gene_nomb`) VALUES
+<<<<<<< HEAD
 (2, 'F'),
 (1, 'M'),
 (3, 'LGTBI');
+=======
+(1, 0),
+(2, 0);
+>>>>>>> 1b5dc2e89cef00bdc689ff784059df965da5b377
 
 -- --------------------------------------------------------
 
@@ -591,13 +599,21 @@ ALTER TABLE `tb_factura`
 -- AUTO_INCREMENT de la tabla `tb_farmacia`
 --
 ALTER TABLE `tb_farmacia`
+<<<<<<< HEAD
   MODIFY `farma_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo de la farmacia', AUTO_INCREMENT=2;
+=======
+  MODIFY `farma_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo de la farmacia';
+>>>>>>> 1b5dc2e89cef00bdc689ff784059df965da5b377
 
 --
 -- AUTO_INCREMENT de la tabla `tb_genero`
 --
 ALTER TABLE `tb_genero`
+<<<<<<< HEAD
   MODIFY `gene_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo genero', AUTO_INCREMENT=4;
+=======
+  MODIFY `gene_codi` int(10) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'codigo genero', AUTO_INCREMENT=3;
+>>>>>>> 1b5dc2e89cef00bdc689ff784059df965da5b377
 
 --
 -- AUTO_INCREMENT de la tabla `tb_login`

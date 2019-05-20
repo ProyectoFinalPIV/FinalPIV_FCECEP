@@ -28,8 +28,8 @@ function mostrarProducto(){
                          proveedor: producto.proveedor,
                          tipo: producto.tipo
                      } 
-                     arrayCompras = JSON.stringify(arrayP);
-                     //console.log(arrayCompras);
+                     arrayCompras.push(arrayP);
+                     console.log(arrayCompras);
                      swal(
                         'Añadido!',
                         'El producto con codigo : ' + codigo + ' fue Añadido',

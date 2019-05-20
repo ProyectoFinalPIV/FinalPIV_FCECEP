@@ -247,7 +247,7 @@ $(document).ready(() => {
   $("#contenido").off("click","button#grabar");
   $("#titulo").html("Listado de Productos");
   dt = $("#tabla").DataTable({
-        "ajax": "../../php/producto/controladorProducto.php?accion=listar",
+        "ajax": "php/producto/controladorProducto.php?accion=listar",
         "columns": [
             { "data": "produ_codi"} ,
             { "data": "produ_nomb" },
@@ -256,11 +256,14 @@ $(document).ready(() => {
             { "data": "prove_nomb_comer" },
             { "data": "tipo_prod_nomb" },
             /*{ "data": "produ_codi",
+<<<<<<< HEAD
                 render: function (data) {
                           return '<a href="#" data-codigo="'+ data + '" class="btn btn-danger btn-sm borrar"> <i class="fa fa-trash"></i></a>' 
                 }
             },*/
             { "data": "produ_codi",
+=======
+>>>>>>> 1b5dc2e89cef00bdc689ff784059df965da5b377
                 render: function (data) {
                           return '<a href="php/login/login.html" data-codigo="'+ data + '" class="btn btn-success btn-sm login"> <i class="fa fa-shopping-cart"></i></a>';
                 }
