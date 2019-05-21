@@ -57,7 +57,7 @@
 		public function consultar($produ_codi='') {
 			if($produ_codi !=''):
 				$this->query = "
-				SELECT produ_codi, produ_nomb, produ_precio, produ_stock, prove_codi/*, tipo_prod_codi*/
+				SELECT produ_codi, produ_nomb, produ_precio, produ_stock, prove_codi, tipo_prod_codi
 				FROM tb_producto
 				WHERE produ_codi = '$produ_codi' order by produ_nomb
 				";
@@ -142,7 +142,7 @@
 		
 		public function borrar($produ_codi='') {
 			$this->query = "
-			DELETE FROM tb_productos
+			DELETE FROM tb_producto
 			WHERE produ_codi = '$produ_codi'
 			";
 			$resultado = $this->ejecutar_query_simple();

@@ -22,40 +22,48 @@
 
 
                 <div class="form-group">
-                        <label class="control-label col-sm-2" for="Id_Producto">Codigo:</label>
+                        <label class="control-label col-sm-2" for="produ_codi">Codigo:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Id_Producto" name="Id_Producto" placeholder="Ingrese Codigo"
+                            <input type="text" class="form-control" id="produ_codi" name="produ_codi" placeholder="Ingrese Codigo"
                             value = "" readonly="true"  data-validation="length alphanumeric" data-validation-length="3-12">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="Nom_Prod">Nombre:</label>
+                        <label class="control-label col-sm-2" for="produ_nomb">Nombre:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Nom_Prod" name="Nom_Prod" placeholder="Ingrese Nombre"
+                            <input type="text" class="form-control" id="produ_nomb" name="produ_nomb" placeholder="Ingrese Nombre"
                             value = "">
                         </div>
                     </div>
 					<div class="form-group">
-                        <label class="control-label col-sm-2" for="Precio_Prod">Precio:</label>
+                        <label class="control-label col-sm-2" for="produ_precio">Precio:</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="Precio_Prod" name="Precio_Prod" placeholder="Ingrese Precio"
+                            <input type="text" class="form-control" id="produ_precio" name="produ_precio" placeholder="Ingrese Precio"
+                            value = "">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="produ_stock">Cantidad:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="produ_stock" name="produ_stock" placeholder="Ingrese Precio"
                             value = "">
                         </div>
                     </div>
 					
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="Nit_Prov">Proveedor:</label>
+                        <label class="control-label col-sm-2" for="prove_codi">Proveedor:</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="Nit_Prov" name="Nit_Prov">
+                            <select class="form-control" id="prove_codi" name="prove_codi">
                          
 							</select>	
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="id_tipo_prod">Tipo Producto:</label>
+                        <label class="control-label col-sm-2" for="tipo_prod_codi">Tipo Producto:</label>
                         <div class="col-sm-10">
-                            <select class="form-control" id="id_tipo_prod" name="id_tipo_prod">
+                            <select class="form-control" id="tipo_prod_codi" name="tipo_prod_codi">
                          
 							</select>	
                         </div>

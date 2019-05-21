@@ -131,8 +131,6 @@ $(document).ready(function(){
 		</form>
     </div>        
 </div>
-<<<<<<< HEAD
 <script src="js/funcionesLogin.js"></script>
-=======
-<script src="js/funcionesLogin2.js"></script>
->>>>>>> 1b5dc2e89cef00bdc689ff784059df965da5b377
+
+

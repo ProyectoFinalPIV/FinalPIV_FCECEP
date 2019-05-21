@@ -24,7 +24,7 @@
 				<th>Precio</th>
 				<th>Stock</th>
 				<th>Proveedor</th>
-				<!--<th>Tipo Producto</th>-->
+				<th>Tipo Producto</th>
 				<th>&nbsp;</th>
 				<th>&nbsp;</th>
 			</tr>
