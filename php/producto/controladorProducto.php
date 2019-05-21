@@ -51,7 +51,7 @@ switch ($_GET['accion']){
         }  else {
             $respuesta = array(
                 'codigo' => $producto->getProdu_codi(),
-                'producto' => $producto->getProdu_nomb(),
+                'nombre' => $producto->getProdu_nomb(),
                 'precio' =>$producto->getProdu_precio(),
                 'stock' => $producto->getProdu_stock(),
                 'proveedor' =>$producto->getProve_codi(),

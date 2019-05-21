@@ -143,7 +143,7 @@ function producto(){
     var datos=$("#fproducto").serialize();
      $.ajax({
           type:"get",
-          url:"../../producto/controladorProducto.php",
+          url:"../producto/controladorProducto.php",
           data: datos,
           dataType:"json"
         }).done(function( resultado ) {
@@ -177,14 +177,14 @@ function producto(){
      var codigo = $(this).data("codigo");
      var proveedor;
      var tipo;
-      $("#nuevo-editar").load("../../producto/editarProducto.php");
+      $("#nuevo-editar").load("../producto/editarProducto.php");
       $("#nuevo-editar").removeClass("hide");
       $("#nuevo-editar").addClass("show");
       $("#producto").removeClass("show");
       $("#producto").addClass("hide");
      $.ajax({
          type:"get",
-         url:"../../producto/controladorProducto.php",
+         url:"../producto/controladorProducto.php",
          data: {codigo: codigo, accion:'consultar'},
          dataType:"json"
          }).done(function( producto ) {        
@@ -206,7 +206,7 @@ function producto(){
 
          $.ajax({
            type:"get",
-           url:"../../proveedor/controladorProveedor.php",
+           url:"../proveedor/controladorProveedor.php",
            data: {accion:'listar'},
            dataType:"json"
          }).done(function( resultado ) {                     
@@ -223,7 +223,7 @@ function producto(){
           
          $.ajax({
           type:"get",
-          url:"../../tipoProducto/controladorTipoProducto.php",
+          url:"../tipoProducto/controladorTipoProducto.php",
           data: {accion:'listar'},
           dataType:"json"
         }).done(function( resultado ) {                     
