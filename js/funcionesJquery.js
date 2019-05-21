@@ -24,11 +24,10 @@ function login(){ //para el login
 	  });
 	}
 function loginP(){
-	$("a .login").click(function(e){
+	$("a .loginP").click(function(e){
 		e.preventDefault();
 	   var url = $(this).attr("href");
-	   console.log(url);
-	   $.post( url,function(resultado) {
+	    $.post( url,function(resultado) {
 			   if(url!="#")
 					   $("#contenedor").removeClass("hide");
 					   $("#contenedor").addClass("show");
