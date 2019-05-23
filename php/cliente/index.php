@@ -14,7 +14,7 @@
                   
 </div><!-- /.box-header -->
 
-<div class="box-body">
+<div class="tabla table-responsive">
 
 	<table id="tabla" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 		<thead>

@@ -3,7 +3,7 @@
 <head>
 	<title>Login Page</title>
    <!--Made with love by Mutiullah Samim -->
-   
+   <meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--Bootsrap 4 CDN-->
 	<!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">-->
     
@@ -11,17 +11,22 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
 	<!--Custom styles-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
   <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
   <!-- Font Awesome-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 </head>
 <body>
-<div class="container">
+<div class="modal-dialog modal-sm">
+<div class="modal-content">
 	<div class="d-flex justify-content-center h-100">
 		<div class="card">
-			<div class="card-header">
+			<div class="modal-header">
 				<h3>Sign In</h3>
 				<div class="d-flex justify-content-end social_icon">
 					<span><i class="fab fa-facebook-square"></i></span>
@@ -29,7 +34,7 @@
 					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
 			</div>
-			<div class="card-body">
+			<div class="modal-body">
 				<form class="form-vertical" role="form" action="php/login/loginConsul.php" method="POST">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
@@ -48,22 +53,27 @@
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right" id="btnLogin">
+						<input type="submit" value="Login" class="btn float-right login_btn" id="btnLogin">
 					</div>
 				</form>
 			</div>
-			<div class="card-footer" id="opciones"> <!--nombre para funcionesJquery-->
+			<div class="modal-footer text-xs-center" id="opciones"> <!--nombre para funcionesJquery-->
 				<div class="d-flex justify-content-center links">
 					Don't have an account?<a href="php/login/nuevoLogin.php">Sign Up</a>
 				</div>
 				<div class="d-flex justify-content-center">
 					<a href="#">Forgot your password?</a>
 				</div>
+				<div class="form-group">
+						<a type="button" href="index.html">Cerrar</a>
+				</div>
+				
 			</div>
 		</div>
 	</div>
 </div>
-<!--<script src="js/funcionesJquery.js"></script>
-<script>$(document).ready(login)</script>-->
+</div>
+<script src="js/funcionesJquery.js"></script>
+<!--<script>$(document).ready(login)</script>-->
 </body>
 </html>

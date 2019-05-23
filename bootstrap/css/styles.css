@@ -11,8 +11,8 @@ background-repeat: no-repeat;
 font-family: 'Numans', sans-serif;
 }
 
-.container{
-height: 100%;
+.modal-content{
+height: 50%;
 align-content: center;
 }
 
@@ -35,7 +35,7 @@ color: white;
 cursor: pointer;
 }
 
-.card-header h3{
+.modal-header h3{
 color: white;
 }
 
@@ -86,4 +86,13 @@ color: white;
 
 .links a{
 margin-left: 4px;
+
+}
+#opciones a{
+    color:#FFC312;
+   
+}
+#opciones a:hover{
+    color: #ffffbb;
+
 }

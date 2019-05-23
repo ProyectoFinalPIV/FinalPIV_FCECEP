@@ -37,7 +37,7 @@ $(document).ready(function(){
 				login_pass2: {
 					required: "Dato obligatorio",
 					equalTo: "Password Diferente"
-				},
+				}
 				
             }            
         });
