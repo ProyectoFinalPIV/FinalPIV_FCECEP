@@ -3,7 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+/*background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');*/
+background: url(../../recursos/img/intro-bg_5.jpg) center center no-repeat;
 background-color:wheat;
 background-size: cover;
 background-repeat: no-repeat;
