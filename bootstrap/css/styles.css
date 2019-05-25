@@ -97,3 +97,12 @@ margin-left: 4px;
     color: #ffffbb;
 
 }
+#contenido{
+    
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-color:wheat;
+background-size: cover;
+background-repeat: no-repeat;
+
+font-family: 'Numans', sans-serif;
+}
