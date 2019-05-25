@@ -1,7 +1,12 @@
 <?php
 
     session_start();
-
+    if (!isset($_SESSION['rol'])){
+    header("location:../../index.html");
+    }else{
+    $nomb = $_SESSION['user'];
+    $rol = $_SESSION['rol'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -22,12 +27,11 @@
     <div class="container-fluid">
             <div class="jumbotron">
                 <?php 
-                    switch ($_SESSION['rol']) {
+                    switch ($rol) {
                         case 1:
                         default:
                         //echo "<script language='javascript'>window.location='../../index.html';</script>";
-                        if (!isset($_SESSION['rol']))
-                            header("location:../../index.html");
+                        
                 //ejemplos: https://es.switch-case.com/55085356
                         //http://decsai.ugr.es/~jfv/ed1/c/cdrom/cap4/cap42.htm#v_ej_b
                         //http://hacerpaginaswebconphp.com/control-de-sesiones-en-php/
@@ -38,7 +42,7 @@
                         break;
                         case 3:
                 ?>
-                <h1>Menú Estudiantes</h1>
+                <h1>Menú Empleado</h1>
                 <?php 
                         break;
                 }?>
@@ -52,14 +56,18 @@
                         <div class="col-sm-3">
                             <div class="panel panel-default">
                                 <div class="panel-heading">
-                                    Menu
+                                    <h1><center>Menu</center></h1>
                                 </div>
                                 <div class="panel-body">
                                     <div class="list-group">
+                                        <div class="list-group">
+                                            <button class="list-group-item active" href="#"><center><i class="fa fa-user"></i><?php if(isset($_SESSION['user'])) echo " ".$nomb;?></center></button>
+                                        </div>
                                         <?php 
                                             switch ($_SESSION['rol']) {
-                                                case 1:
+                                            case 1:
                                         ?>
+                                        
                                         <a class="list-group-item" href="../../php/farmacia/index.php" id="farmacias">Gestion Farmacias</a>
                                         <a class="list-group-item" href="../../php/cliente/index.php" id="clientes">Gestion Clientes</a>
                                         <a class="list-group-item" href="../../php/genero/index.php" id="generos">Gestion Generos</a>
@@ -74,36 +82,36 @@
                                                 break;
                                                 case 3:
                                         ?>
-                                        <a class="list-group-item" href="php/estudiantes/index.php" id="estudiantes">Consulta</a>
+                                        <a class="list-group-item" href="../nueva_factura.php" id="estudiantes">Gestion Ventas</a>
                                         <?php
-
-                                                break;
-                                                case 2:
-                                            
+                                            break;
+                                                                                    
                                         }?>
                                     </div>
                                     <div class="list-group">
-                                        <a class="list-group-item active" href="../logout.php">Cerrar sesión</a>
+                                        <a class="list-group-item active" href="../logout.php"><center><i class="fa fa-power-off"> Cerrar sesión</i></center></a>
                                     </div>
                                 </div>
                            <!--  <p><a id="empresas" class="btn btn-danger btn-block" href="php/empresa/index.php" role="button">Empresas</a></p>
                             <p><a id="contrato" class="btn btn-danger btn-block" href="php/contrato/index.php" role="button">Contrato</a></p> -->
+                            </div>
                         </div>
-                    </div>
                     <div class="col-sm-9">
                         <div class="panel-group hide" id="contenedor">
                             <div class="panel panel-default">
                                 <div class="panel-heading" id="titulo"></div>
                                 <div class="panel-body">
                                     <div class="form-group" id="contenido">
+
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> <!--col-sm-9-->
                 </div>
             </div>
         </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>

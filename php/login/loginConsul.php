@@ -3,22 +3,28 @@
 
 session_start();
 
-$username=$_POST['username'];
+$username= htmlspecialchars(trim($_POST['username']));
 
-$pass=$_POST['pass'];
+$pass= htmlspecialchars(trim($_POST['pass']));
 //echo $username;
-//echo $pass;
+echo $pass;
 require_once("serv.php");
 
 $sql=mysqli_query($mysqli,"SELECT log.login_nick, log.login_pass, log.login_esta, log.rol_id,  log.emple_codi, log.admin_codi, log.admin_farma_codi, log.cliente_codi
 								FROM tb_login as log 
 								inner join tb_rol as rol on (rol.rol_id = log.rol_id) 
-								WHERE log.login_nick = '$username'
-								AND log.login_pass='$pass'");
+								WHERE log.login_nick = '$username'");
+								//AND log.login_pass='$pass'");
 
 if($f=mysqli_fetch_assoc($sql)){
+	/*echo " ".$f['login_pass'];
+	$passBD = $f['login_pass'];
+  if(password_verify($pass, '$2y$10$2FQycdZdyrgKn')){
+	  echo "---eiman";
+  }else{
+	  echo "----males";
+  }*/
 
-	
 	switch($f['rol_id']){
 
 		case '1':
@@ -60,7 +66,7 @@ if($f=mysqli_fetch_assoc($sql)){
 				$_SESSION['rol']=$f['rol_id'];
 				$_SESSION['admin_farma_codi']=$f['admin_farma_codi'];
 				$_SESSION['emple_codi']=$f['emple_codi'];
-				echo "<script>location.href='../empleado/index.php'</script>";
+				echo "<script>location.href='../adminsys/index.php'</script>";
 
 			} else {
 
@@ -81,7 +87,7 @@ if($f=mysqli_fetch_assoc($sql)){
 
 			} else {
 
-				echo '<script>alert("CREDENCIALES 3 INCORRECTAS");</script> ';			
+				echo '<script>alert("CREDENCIALES 4 INCORRECTAS");</script> ';			
 				echo "<script>location.href='../../index.html';</script>";
 			}
 			

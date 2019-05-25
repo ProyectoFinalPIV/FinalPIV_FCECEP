@@ -131,7 +131,7 @@ function login(){
         var datos = "comu_codi="+comu_codi+"&comu_nomb="+comu_nomb+"&muni_codi="+muni_codi;*/
       
       var datos=$("#flogin").serialize();
-      //console.log(datos);
+      console.log(datos);
 
       $.ajax({
             type:"get",
@@ -150,9 +150,9 @@ function login(){
                 $("#titulo").html("Listado Productos");
                 $("#seccion-login").html("");
                 $("#seccion-login").removeClass("show");
-                //$("#nuevo-editar").addClass("hide");
-                //$("#login").removeClass("hide");
-                //$("#login").addClass("show")
+                $("#nuevo-editar").addClass("hide");
+                $("#login").removeClass("hide");
+                $("#login").addClass("show")
              } else {
                 swal({
                   type: 'error',

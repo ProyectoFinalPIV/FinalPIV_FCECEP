@@ -9,8 +9,12 @@
     em { font-weight: bold; padding-right: 1em; vertical-align: top; }
     input.error { border: 1px solid red; }
 </style>
-
+	
+<link type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css" rel="stylesheet"/>
 <script language="javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+
+ 
 <!--Fin libreias Validacion-->
 <script language="javascript">
 $(document).ready(function(){
@@ -44,9 +48,6 @@ $(document).ready(function(){
         
     });
 </script>
-
-
-
 	<div class="box-header">
     	<i class="fa fa-building" aria-hidden="true">Gestión de Persona</i>
         <!-- tools box -->
@@ -81,7 +82,7 @@ $(document).ready(function(){
                         <label class="control-label col-sm-2" for="login_nick">Usuario:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="login_nick" name="login_nick" placeholder="Ingrese Usuario"
-                                value = "" require>
+                                value = "" pattern="[a-zA-Z0-9]{2,64}" title="Nombre de usuario ( sólo letras y números, 2-64 caracteres)" required>
                         </div>
                     </div>
                     
@@ -89,7 +90,7 @@ $(document).ready(function(){
                             <label class="control-label col-sm-2" for="login_pass">Contraseña:</label>
                             <div class="col-sm-6">
                                 <input type="password" class="form-control" id="login_pass" name="login_pass" placeholder="Ingrese Contraseña"
-                                    value = "" require>
+                                    value = "" pattern=".{6,}" title="Contraseña ( min . 6 caracteres)" required>
                                       
                             </div>
                         </div>
@@ -98,7 +99,7 @@ $(document).ready(function(){
                             <label class="control-label col-sm-2" for="login_pass2">Comfirmar Contraseña:</label>
                             <div class="col-sm-6">
                                 <input type="password" class="form-control" id="login_pass2" name="login_pass2" placeholder="Confirmar Contraseña"
-                                    value = "">
+                                    value = "" pattern=".{6,}" required>
                             </div>
                         </div>
                         
