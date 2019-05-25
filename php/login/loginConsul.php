@@ -7,7 +7,7 @@ $username= htmlspecialchars(trim($_POST['username']));
 
 $pass= htmlspecialchars(trim($_POST['pass']));
 //echo $username;
-echo $pass;
+//echo $pass;
 require_once("serv.php");
 
 $sql=mysqli_query($mysqli,"SELECT log.login_nick, log.login_pass, log.login_esta, log.rol_id,  log.emple_codi, log.admin_codi, log.admin_farma_codi, log.cliente_codi
