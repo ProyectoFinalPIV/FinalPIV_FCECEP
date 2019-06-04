@@ -37,4 +37,5 @@
 
 </div><!-- /.box-body -->  
 <script src="../../js/funcionesProducto.js"></script>
+<script src="js/funcionesProducto.js"></script>
 </div>

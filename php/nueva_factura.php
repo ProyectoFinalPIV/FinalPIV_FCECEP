@@ -85,7 +85,11 @@
 	</div>
 	<hr>
 	<?php
+<<<<<<< HEAD
 	include("footer.php");
+=======
+	//include("footer.php");
+>>>>>>> fc8be048a2bb529e41873bfcb782a7cbdc0fecb4
 	?>
 	<script type="text/javascript" src="js/VentanaCentrada.js"></script>
 	<script type="text/javascript" src="js/nueva_factura.js"></script>

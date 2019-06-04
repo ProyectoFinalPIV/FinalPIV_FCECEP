@@ -102,7 +102,11 @@
 					$$campo = $valor;
 				endforeach;
 				$login_nick= utf8_decode($login_nick);
+<<<<<<< HEAD
 				$login_pass = utf8_decode($login_pass);
+=======
+				$login_pass= utf8_decode($login_pass);
+>>>>>>> fc8be048a2bb529e41873bfcb782a7cbdc0fecb4
 				//$login_pass = password_hash($login_pass,PASSWORD_BCRYPT);
 				$login_esta = utf8_decode($login_esta);
 				

@@ -1,5 +1,9 @@
 	<?php
+<<<<<<< HEAD
 		if (isset($con))
+=======
+		//if (isset($con))
+>>>>>>> fc8be048a2bb529e41873bfcb782a7cbdc0fecb4
 		{
 	?>	
 			<!-- Modal -->

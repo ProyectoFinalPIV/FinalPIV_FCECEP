@@ -284,7 +284,7 @@ $(document).ready(() => {
             },*/
             { "data": "produ_codi",
                 render: function (data) {
-                          return '<a href="php/login/login.html" data-codigo="'+ data + '" class="btn btn-success btn-sm loginP"> <i class="fa fa-shopping-cart"></i></a>';
+                          return '<a href="#" data-codigo="'+ data + '" class="btn btn-success btn-sm loginP"> <i class="fa fa-shopping-cart"></i></a>';
                 }
             }
         ]
