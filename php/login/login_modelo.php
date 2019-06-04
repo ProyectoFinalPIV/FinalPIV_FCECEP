@@ -103,6 +103,7 @@
 				endforeach;
 				$login_nick= utf8_decode($login_nick);
 				$login_pass = utf8_decode($login_pass);
+				//$login_pass = password_hash($login_pass,PASSWORD_BCRYPT);
 				$login_esta = utf8_decode($login_esta);
 				
 				$this->query = "

@@ -1,6 +1,10 @@
 <?php
 session_start();
+if(isset($_SESSION['user'])){
 $user = $_SESSION['user'];
+} else {
+    header("location:../../index.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +46,7 @@ $user = $_SESSION['user'];
                     <!--<li><a href="#contact">CONTACT</a></li>-->
                     <ul class="nav navbar-nav navbar-right" id="estes">
                         <li><a href="#"><i class="fa fa-user"><?php echo $user; ?></i></a></li>
-                        <li><a href="../logout.php">CERRAR</a></li>
+                        <li><a href="../logout2.php"><i class="fa fa-power-off"></i>CERRAR</a></li>
                         <li><a class="btn btn-info carro" href="#" role="button"><i class="fa fa-shopping-cart"></i></a></li>    
                     </ul>
                 </ul>

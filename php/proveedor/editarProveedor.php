@@ -29,19 +29,19 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="control-label col-sm-2" for="docu_codi">Tipo Documento: </label>
-                        <div class="col-sm-10">
-                            <select class="form-control" id="docu_codi" name="docu_codi">
-                         
-							</select>	
-                        </div>
-                    </div>
-
-                    <div class="form-group">
                         <label class="control-label col-sm-2" for="prove_cedula">Numero:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="prove_cedula" name="prove_cedula" placeholder="Ingrese Numero Cedula"
                             value = "">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2" for="docu_codi">Tipo Documento: </label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="docu_codi" name="docu_codi">
+                         
+                            </select>   
                         </div>
                     </div>
 
